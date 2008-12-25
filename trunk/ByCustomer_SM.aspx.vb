@@ -55,6 +55,7 @@ Partial Class ByCustomer_SM
     End Sub
     Protected Sub btAddStatus_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btAddStatus.Click
         Dim connectUpdate As String
+        Dim clsx As New cls
         connectUpdate = WebConfigurationManager.ConnectionStrings("Special_MentionConnectionString").ConnectionString.ToString
         Dim cnt As SqlConnection = New SqlConnection(connectUpdate)
         Dim cmSQLInsert As New SqlCommand
@@ -71,13 +72,13 @@ Partial Class ByCustomer_SM
             Dim Id_AbilityToPay As String = dlId_Abilitytopay.SelectedValue
             Dim DatePromise As String = txtDatePromise.Text.Trim
             If Id_Status = "31" Or Id_Status = "43" Then 'Id_Status = สัญญาว่าจะจ่าย หรือ ขอปรับปรุงโครงสร้างหนี้ & สัญญาว่าจะจ่าย
-                Dim clsDate As New clsConvertYear
-                DatePromise = clsDate.ConvertYear(DatePromise)
+
+                DatePromise = clsx.ConvertYear(DatePromise)
                 DatePromise = "',CONVERT(DATETIME,'" + DatePromise + "',103),'"
             Else
                 DatePromise = "',NULL,'"
             End If
-            Dim Comment As String = txtComment.Text.Trim
+            Dim Comment As String = clsx.txtUpdate(txtComment.Text.Trim)
             Dim EMP_DT As String = Session("USER_ID")
 
 
