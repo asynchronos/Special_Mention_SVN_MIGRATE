@@ -3,7 +3,7 @@ Option Strict On
 
 Imports Microsoft.VisualBasic
 
-Public Class clsConvertYear
+Public Class cls
     ''' <summary>
     ''' Function ใช้สำหรับแสดง Convert Date(String Value) ปี พ.ศ. แปลงเป็น คศ.
     ''' </summary>
@@ -17,5 +17,14 @@ Public Class clsConvertYear
             xDate = Mid(xDate, 1, (Len(xDate) - 4)) & yearKS
         End If
         Return xDate
+    End Function
+
+    Public Function txtUpdate(ByVal xString As String) As String
+        Dim pString As String
+        pString = xString.Trim
+        If InStr(1, pString, "'") > 1 Then
+            Replace(pString, "'", "''", 1, -1)
+        End If
+        Return pString
     End Function
 End Class
