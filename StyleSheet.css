@@ -1,0 +1,42 @@
+﻿.font1 {
+	FONT-SIZE: 16px; FONT-FAMILY: "MS Sans Serif", "Microsoft Sans Serif", CordiaUPC
+}
+.font1b {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: "MS Sans Serif", "Microsoft Sans Serif", CordiaUPC
+}
+.font1h {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: blue; FONT-FAMILY: "MS Sans Serif", "Microsoft Sans Serif", CordiaUPC
+}
+.font1fr {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: "MS Sans Serif", "Microsoft Sans Serif", CordiaUPC
+}
+.font1f {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR:White; FONT-FAMILY: "MS Sans Serif", "Microsoft Sans Serif", CordiaUPC
+}
+.font1g
+{
+	font-weight: bold;
+	font-size: 15px;
+	color: green;
+	font-family: "MS Sans Serif" , "Microsoft Sans Serif" , CordiaUPC;
+}
+TD
+{
+	font-size: 10px;
+	color: #444444;
+	font-family: MS Sans Serif, sans-serif;
+    text-align: left;
+}
+INPUT
+{
+	font-size: 10px;
+	color: #444444;
+	font-family: MS Sans Serif, sans-serif;
+}
+SELECT
+{
+	font-size: 10px;
+	color: #444444;
+	font-family: MS Sans Serif, sans-serif;
+}
+
