@@ -19,12 +19,10 @@ Public Class cls
         Return xDate
     End Function
 
-    Public Function txtUpdate(ByVal xString As String) As String
-        Dim pString As String
-        pString = xString.Trim
-        If InStr(1, pString, "'") > 1 Then
-            Replace(pString, "'", "''")
+    Public Function StringUpdate(ByVal xString As String) As String
+        If InStr(1, xString, "'") > 0 Then
+            xString = Replace(xString, "'", "''")
         End If
-        Return pString
+        Return xString
     End Function
 End Class
