@@ -78,7 +78,7 @@ Partial Class ByCustomer_SM
             Else
                 DatePromise = "',NULL,'"
             End If
-            Dim Comment As String = clsx.txtUpdate(txtComment.Text.Trim)
+            Dim Comment As String = clsx.StringUpdate(txtComment.Text.Trim)
             Dim EMP_DT As String = Session("USER_ID")
 
 
