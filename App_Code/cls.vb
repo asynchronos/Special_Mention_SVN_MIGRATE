@@ -23,7 +23,7 @@ Public Class cls
         Dim pString As String
         pString = xString.Trim
         If InStr(1, pString, "'") > 1 Then
-            Replace(pString, "'", "''", 1, -1)
+            Replace(pString, "'", "''")
         End If
         Return pString
     End Function
