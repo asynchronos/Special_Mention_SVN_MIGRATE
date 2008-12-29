@@ -296,13 +296,11 @@ function chkaccountselect()
                             </td>
                         </tr>
                         <tr>
-                            <td class="style1" valign="top">
+                            <td class="style1" valign="top" colspan="2">
                                 <asp:Button ID="btAddStatus" runat="server" 
-                                    OnClientClick="return chkDataInput();" Text="Insert status" />
+                                    OnClientClick="return chkDataInput();" Text="Insert status" />&nbsp;
                                 <asp:Button ID="btCancle" runat="server" Text="Cancle" />
                             </td>
-                            <td class="style1" valign="top">
-                                &nbsp;</td>
                         </tr>
                     </table>
                 </asp:View>
