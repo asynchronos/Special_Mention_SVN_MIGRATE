@@ -30,12 +30,20 @@ Partial Class ByCustomer_SM
         lblDASOFtxt.Text = ""
         lblAPP_ID.Text = ""
     End Sub
+    Sub Switchview()
+        If MultiView1.ActiveViewIndex = 0 Then
+            MultiView1.ActiveViewIndex = 1
+        Else
+            MultiView1.ActiveViewIndex = 0
+        End If
+    End Sub
 #End Region
     Protected Sub form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles form1.Load
         ChkSession()
     End Sub
     Protected Sub gvByCustomer_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.SelectedIndexChanged
         ClearData()
+        MultiView1.ActiveViewIndex = 1
         lblCIF.Text = gvByCustomer.Rows(gvByCustomer.SelectedIndex).Cells(xcol.gvByCustomerCIF).Text
         lblName.Text = gvByCustomer.Rows(gvByCustomer.SelectedIndex).Cells(xcol.gvByCustomerName).Text
     End Sub
@@ -46,6 +54,7 @@ Partial Class ByCustomer_SM
         lblCountByAcc.Text = "(จำนวนบัญชี: " & e.AffectedRows & " บัญชี)"
     End Sub
     Protected Sub gvByAccount_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByAccount.SelectedIndexChanged
+        MultiView1.ActiveViewIndex = 1
         lblAccount.Text = ""
         lblAccount.Text = gvByAccount.Rows(gvByAccount.SelectedIndex).Cells(xcol.gvByAccountACCNO).Text
         lblDASOFtxt.Text = ""
@@ -92,6 +101,7 @@ Partial Class ByCustomer_SM
 
             ' ResultUpdate.Text = "Suscess Update Data"
             Response.Write("<Script>alert('Finnished Insert Status Account: " + ACCNO + "')</Script>")
+            MultiView1.ActiveViewIndex = 1
         Catch ex As Exception
             Response.Write("<Script>alert('Error: Can''t Not Insert')</Script>")
         Finally
@@ -105,5 +115,16 @@ Partial Class ByCustomer_SM
                 'gvByCustomer.DataBind()
             End If
         End Try
+    End Sub
+    Protected Sub btAddNewStatus_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btAddNewStatus.Click
+        Switchview()
+    End Sub
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not Me.IsPostBack Then
+            MultiView1.ActiveViewIndex = 1
+        End If
+    End Sub
+    Protected Sub btCancle_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btCancle.Click
+        Switchview()
     End Sub
 End Class
