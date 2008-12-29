@@ -10,8 +10,15 @@
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript">
+function chkaccountselect()
+{if(document.getElementById("lblAccount").innerHTML=="")
+{alert("Please Select Account");
+        return false;           
+}
+}
+
  function chkDataInput()
- {var r=confirm("Are you sure to add new status account " + document.getElementById("lblAccount").innerHTML + " ?");
+ {var r=confirm("Are you sure to insert new status account " + document.getElementById("lblAccount").innerHTML + " ?");
  if (r==true)
  {
     if(document.getElementById("lblAccount").innerHTML=="")
@@ -300,7 +307,7 @@
                     </table>
                 </asp:View>
                 <asp:View ID="View2" runat="server">
-                                    <asp:Button ID="btAddNewStatus" runat="server" Text="Add New Status" />
+                                    <asp:Button ID="btAddNewStatus" runat="server" Text="Add New Status" OnClientClick="return chkaccountselect();"/>
                                     <br />
                                     <asp:Label ID="lblHistoryStatus" runat="server" 
                         style="color: #0000CC; font-weight: 700; text-decoration: underline;" 
