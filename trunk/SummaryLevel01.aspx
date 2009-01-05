@@ -62,6 +62,8 @@
                     Type="String" />
                 <asp:QueryStringParameter DefaultValue="0" Name="Id_StatusG" 
                     QueryStringField="Id_StatusG" Type="String" />
+                <asp:QueryStringParameter Name="CUSTSIZE" QueryStringField="CUSTSIZE" 
+                    Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>   
     </div>
@@ -122,6 +124,8 @@
                 PropertyName="Text" Type="String" />
             <asp:ControlParameter ControlID="txtgvLendingSub_Deptflag" DefaultValue="0" 
                 Name="Deptflag" PropertyName="Text" Type="String" />
+            <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
+                QueryStringField="CUSTSIZE" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
     <asp:TextBox ID="txtgvLendingSub_FlagHub" runat="server" Visible="False"></asp:TextBox>
@@ -190,6 +194,8 @@
                 QueryStringField="id_StatusG" Type="String" />
             <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                 Type="String" />
+            <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
+                QueryStringField="CUSTSIZE" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
     </div>
