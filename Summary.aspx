@@ -37,6 +37,22 @@
             </tr>
             <tr>
                 <td>
+                    <asp:Label ID="lblCustsize" runat="server" Text="Select Cust.Size "></asp:Label>
+                    <asp:DropDownList ID="dlCustsize" runat="server" AutoPostBack="True" 
+                        DataSourceID="SqlDataId_Custsize" DataTextField="CUSTSIZE" 
+                        DataValueField="CUSTSIZEtxt" 
+                        ToolTip="Select cust.size to view data summary by cust.size">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataId_Custsize" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
+                        SelectCommand="SELECT [CUSTSIZE], [CUSTSIZEtxt], [CUSTSIZESort] FROM [Id_Custsize] ORDER BY [CUSTSIZESort]">
+                    </asp:SqlDataSource>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
         <asp:Button ID="btShowW1" runat="server" Text="Week 1" 
                         ToolTip="Click to view data summary week 1" />    
         <asp:Button ID="btShowW2" runat="server" Text="Week 2" 
@@ -172,6 +188,8 @@
                     Type="String" />
                 <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                     Type="String" />
+                <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                    PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
     
@@ -293,6 +311,8 @@
                     Type="String" />
                 <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                     Type="String" />
+                <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                    PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
             </asp:View>
@@ -419,6 +439,8 @@
                             Type="String" />
                         <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                             Type="String" />
+                        <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                            PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <asp:Label ID="lblSumNonTDRW2" runat="server" ForeColor="#0000CC" 
@@ -538,6 +560,8 @@
                             Type="String" />
                         <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                             Type="String" />
+                        <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                            PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
             </asp:View>
@@ -664,6 +688,8 @@
                             Type="String" />
                         <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                             Type="String" />
+                        <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                            PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <asp:Label ID="lblSumNonTDRW3" runat="server" ForeColor="#0000CC" 
@@ -783,6 +809,8 @@
                             Type="String" />
                         <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                             Type="String" />
+                        <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                            PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
             </asp:View>
@@ -909,6 +937,8 @@
                             Type="String" />
                         <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                             Type="String" />
+                        <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                            PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <asp:Label ID="Label19" runat="server" ForeColor="#0000CC" 
@@ -1028,6 +1058,8 @@
                             Type="String" />
                         <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
                             Type="String" />
+                        <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
+                            PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
             </asp:View>
