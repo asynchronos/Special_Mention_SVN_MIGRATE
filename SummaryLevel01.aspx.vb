@@ -82,7 +82,8 @@ Partial Class SummaryLevel01
             Div_Summarylending.Visible = False
             Div_SummaryLengingControlling.Visible = False
         ElseIf Session("ROLE") = 72 Then 'ดูแลทั้งฝ่ายงาน และ สาขา(เพลินจิต(6500,001),พระราม3(1700,777)
-            'เห็นหมด
+            Div_Summarylending.Visible = False
+            Div_SummaryLengingControlling.Visible = False
         ElseIf Session("ROLE") = 23 Or Session("ROLE") = 26 Then 'รหัสภาค'
             Div_SummaryControlling.Visible = False
         ElseIf Session("ROLE") = 24 Then 'ผู้จัดการฝ่าย
