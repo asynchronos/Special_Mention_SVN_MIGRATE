@@ -64,7 +64,7 @@ Partial Class SummaryLevel01
     Sub ChkRole()
         If Session("ROLE") = 2 Then 'ผู้จัดการ ดูได้ทั้งหมด
             Div_SummaryControlling.Visible = False
-        ElseIf Session("ROLE") = 5 Then 'หัวหน้ากลุ่ม SME และ หัวหน้าทีมSME
+        ElseIf Session("ROLE") = 5 Then 'หัวหน้ากลุ่ม SME
             Div_SummaryControlling.Visible = False
         ElseIf Session("ROLE") = 6 Then 'หัวหน้าทีมSME
             'เห็นหมด
