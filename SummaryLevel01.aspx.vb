@@ -26,6 +26,7 @@ Partial Class SummaryLevel01
             "&DEPTFLAG=" & e.Row.DataItem("DEPTFLAG") & _
             "&Id_DepTran=" & e.Row.DataItem("Id_DepTran") & _
             "&TDR=" & e.Row.DataItem("TDR") & _
+            "&CUSTSIZE=" & Request.QueryString("CUSTSIZE") & _
             "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
             '========= Add Attrib In ImageButton For Open NewWindows
         End If
@@ -43,6 +44,7 @@ Partial Class SummaryLevel01
             "&DEPTFLAG=" & e.Row.DataItem("DEPTFLAG") & _
             "&Id_DepTran=" & e.Row.DataItem("Id_DepTran") & _
             "&TDR=" & e.Row.DataItem("TDR") & _
+            "&CUSTSIZE=" & Request.QueryString("CUSTSIZE") & _
             "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
             '========= Add Attrib In ImageButton For Open NewWindows
         End If
