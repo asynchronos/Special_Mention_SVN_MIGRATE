@@ -160,6 +160,8 @@ function chkaccountselect()
                     Type="Byte" />
                 <asp:SessionParameter DefaultValue="0" Name="USER_ID" SessionField="USER_ID" 
                     Type="String" />
+                <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
+                    QueryStringField="CUSTSIZE" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
     
