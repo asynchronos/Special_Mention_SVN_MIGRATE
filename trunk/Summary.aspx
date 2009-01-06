@@ -37,15 +37,27 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Label ID="lblCustsize" runat="server" Text="Select Cust.Size "></asp:Label>
+                    <asp:Label ID="lblCustsize" runat="server" Text="Cust.size " 
+                        ToolTip="Select Cust.size to view data summary"></asp:Label>
                     <asp:DropDownList ID="dlCustsize" runat="server" AutoPostBack="True" 
                         DataSourceID="SqlDataId_Custsize" DataTextField="CUSTSIZE" 
-                        DataValueField="CUSTSIZEtxt" 
-                        ToolTip="Select cust.size to view data summary by cust.size">
+                        DataValueField="Id_CUSTSIZE" 
+                        ToolTip="Select cust.size to view data summary by cust.size" 
+                        BackColor="#66CCFF" Font-Bold="True">
+                    </asp:DropDownList>
+                    <asp:Label ID="lblGroupAging" runat="server" Text="Group Aging "></asp:Label>
+                    <asp:DropDownList ID="dlAgingGroup" runat="server" AutoPostBack="True" 
+                        BackColor="#FF9999" DataSourceID="SqlDataId_AgingGroup" 
+                        DataTextField="AgingGroup" DataValueField="Id_AgingGroup" Font-Bold="True">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataId_Custsize" runat="server" 
                         ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
-                        SelectCommand="SELECT [CUSTSIZE], [CUSTSIZEtxt], [CUSTSIZESort] FROM [Id_Custsize] ORDER BY [CUSTSIZESort]">
+                        
+                        SelectCommand="SELECT Id_CUSTSIZE, CUSTSIZE, CUSTSIZESort FROM Id_Custsize ORDER BY CUSTSIZESort">
+                    </asp:SqlDataSource>                                        
+                    <asp:SqlDataSource ID="SqlDataId_AgingGroup" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
+                        SelectCommand="SELECT [Id_AgingGroup], [AgingGroup], [AgingMin], [AgingMax], [Remark] FROM [Id_AgingGroup]">
                     </asp:SqlDataSource>
                 </td>
                 <td>
@@ -190,6 +202,8 @@
                     Type="String" />
                 <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                     PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                    Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
     
@@ -313,6 +327,8 @@
                     Type="String" />
                 <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                     PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                    Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
             </asp:View>
@@ -441,6 +457,8 @@
                             Type="String" />
                         <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                             PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                            Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <asp:Label ID="lblSumNonTDRW2" runat="server" ForeColor="#0000CC" 
@@ -562,6 +580,8 @@
                             Type="String" />
                         <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                             PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                            Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
             </asp:View>
@@ -690,6 +710,8 @@
                             Type="String" />
                         <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                             PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                            Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <asp:Label ID="lblSumNonTDRW3" runat="server" ForeColor="#0000CC" 
@@ -811,6 +833,8 @@
                             Type="String" />
                         <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                             PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                            Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
             </asp:View>
@@ -939,6 +963,8 @@
                             Type="String" />
                         <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                             PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                            Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 <asp:Label ID="Label19" runat="server" ForeColor="#0000CC" 
@@ -1060,6 +1086,8 @@
                             Type="String" />
                         <asp:ControlParameter ControlID="dlCustsize" DefaultValue="" Name="CUSTSIZE" 
                             PropertyName="SelectedValue" Type="String" />
+                        <asp:ControlParameter ControlID="dlAgingGroup" DefaultValue="" 
+                            Name="AgingGroup" PropertyName="SelectedValue" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
             </asp:View>
