@@ -162,6 +162,8 @@ function chkaccountselect()
                     Type="String" />
                 <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
                     QueryStringField="CUSTSIZE" Type="String" />
+                <asp:QueryStringParameter DefaultValue="" Name="AgingGroup" 
+                    QueryStringField="AgingGroup" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
     
