@@ -64,6 +64,8 @@
                     QueryStringField="Id_StatusG" Type="String" />
                 <asp:QueryStringParameter Name="CUSTSIZE" QueryStringField="CUSTSIZE" 
                     Type="String" />
+                <asp:QueryStringParameter Name="AgingGroup" QueryStringField="AgingGroup" 
+                    Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>   
     </div>
@@ -126,6 +128,8 @@
                 Name="Deptflag" PropertyName="Text" Type="String" />
             <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
                 QueryStringField="CUSTSIZE" Type="String" />
+            <asp:QueryStringParameter DefaultValue="" Name="AgingGroup" 
+                QueryStringField="AgingGroup" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
     <asp:TextBox ID="txtgvLendingSub_FlagHub" runat="server" Visible="False"></asp:TextBox>
@@ -196,6 +200,8 @@
                 Type="String" />
             <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
                 QueryStringField="CUSTSIZE" Type="String" />
+            <asp:QueryStringParameter DefaultValue="" Name="AgingGroup" 
+                QueryStringField="AgingGroup" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
     </div>
