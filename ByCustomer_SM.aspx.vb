@@ -47,11 +47,16 @@ Partial Class ByCustomer_SM
                     filterExpression = listFilter.SelectedValue & "=" & Me.filterTextBox.Text & ""
                     Response.Write("<font size=3 color=red>Filter expression in effect is: " & filterExpression & "</font>")
                 Else
-                    Response.Write("alert('CIF ที่ Filter ต้องเป็นตัวเลข');")
+                    Response.Write("<font size=3 color=red>CIF ที่ Filter ต้องเป็นตัวเลข</font>")
                     Exit Sub
                 End If
             Else
-                filterExpression = listFilter.SelectedValue & " like '%" & Replace(Me.filterTextBox.Text, "'", "''") & "%'"
+                If listFilter.SelectedValue = "FlagHub" Then
+                    filterExpression = listFilter.SelectedValue & "='" & Replace(Me.filterTextBox.Text, "'", "''") & "'"
+                Else
+                    filterExpression = listFilter.SelectedValue & " like '%" & Replace(Me.filterTextBox.Text, "'", "''") & "%'"
+                End If
+
                 Response.Write("<font size=3 color=red>Filter expression in effect is: " & filterExpression & "</font>")
             End If
         Else
