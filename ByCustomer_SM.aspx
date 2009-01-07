@@ -78,7 +78,20 @@ function chkaccountselect()
         <br />
         <asp:Label ID="lblByCustomer" runat="server" Text="Customer"></asp:Label>
         <asp:Label ID="lblCountByCus" runat="server"></asp:Label>
-    
+        <asp:Label ID="lblByCusPage" runat="server"></asp:Label>
+        <br />
+          Filter :
+                    <asp:DropDownList ID="listFilter" runat="server">
+                        <asp:ListItem>CIF</asp:ListItem>
+                        <asp:ListItem Value="NAME">ชื่อลูกค้า</asp:ListItem>
+                        <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
+                        <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
+                        <asp:ListItem Value="Office_Name">ชือผู้ดูแล</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
+                    <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
+                    <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
+                    &nbsp;&nbsp;
         <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
             AutoGenerateColumns="False" CellPadding="3" 
             GridLines="Horizontal" AllowPaging="True" AllowSorting="True" 
@@ -152,14 +165,18 @@ function chkaccountselect()
                     QueryStringField="Id_StatusG" Type="String" />
                 <asp:QueryStringParameter DefaultValue="0" Name="TDR" QueryStringField="TDR" 
                     Type="String" />
-                <asp:QueryStringParameter DefaultValue="0" Name="Deptflag" 
-                    QueryStringField="Deptflag" Type="String" />
-                <asp:QueryStringParameter DefaultValue="0" Name="Id_DepTran" 
-                    QueryStringField="Id_DepTran" Type="String" />
                 <asp:SessionParameter DefaultValue="0" Name="ROLE" SessionField="ROLE" 
                     Type="Byte" />
                 <asp:SessionParameter DefaultValue="0" Name="USER_ID" SessionField="USER_ID" 
                     Type="String" />
+                <asp:SessionParameter Name="HUB" SessionField="HUB" Type="String" 
+                    DefaultValue="0" />
+                <asp:SessionParameter Name="REGION" SessionField="REGION" Type="String" 
+                    DefaultValue="0" />
+                <asp:SessionParameter Name="BRANCH" SessionField="BRANCH" Type="String" 
+                    DefaultValue="0" />
+                <asp:SessionParameter Name="DEPT" SessionField="DEPT" Type="String" 
+                    DefaultValue="0" />
                 <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
                     QueryStringField="CUSTSIZE" Type="String" />
                 <asp:QueryStringParameter DefaultValue="" Name="AgingGroup" 
@@ -174,6 +191,7 @@ function chkaccountselect()
     <asp:Label ID="lblName" runat="server" style="font-weight: 700; color: #0000CC"></asp:Label>
     <br />
     <asp:Label ID="lblCountByAcc" runat="server"></asp:Label>
+    <asp:Label ID="lblByAccPage" runat="server"></asp:Label>
     <asp:GridView ID="gvByAccount" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="ACCNO" DataSourceID="SqlDataByAccount" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
