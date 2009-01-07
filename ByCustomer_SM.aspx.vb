@@ -37,9 +37,52 @@ Partial Class ByCustomer_SM
             MultiView1.ActiveViewIndex = 0
         End If
     End Sub
+#Region "Filter"
+    Protected Sub SetFilter()
+        'ChkRole()
+        Dim filterExpression As String = ""
+        If Me.filterTextBox.Text <> "" Then ' ถ้า ไม่คีย์เงื่อนไข จะไม่ทำเลย
+            If listFilter.SelectedValue = "CIF" Then
+                If IsNumeric(Me.filterTextBox.Text) Then
+                    filterExpression = listFilter.SelectedValue & "=" & Me.filterTextBox.Text & ""
+                    Response.Write("<font size=3 color=red>Filter expression in effect is: " & filterExpression & "</font>")
+                Else
+                    Response.Write("alert('CIF ที่ Filter ต้องเป็นตัวเลข');")
+                    Exit Sub
+                End If
+            Else
+                filterExpression = listFilter.SelectedValue & " like '%" & Replace(Me.filterTextBox.Text, "'", "''") & "%'"
+                Response.Write("<font size=3 color=red>Filter expression in effect is: " & filterExpression & "</font>")
+            End If
+        Else
+            Exit Sub
+        End If
+        Me.SqlDataByCustomer.FilterExpression = filterExpression
+    End Sub
+    Protected Sub setFilterButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles setFilterButton.Click
+        Me.SetFilter()
+    End Sub
+    Protected Sub clearFilterButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles clearFilterButton.Click
+        Me.filterTextBox.Text = ""
+        Me.listFilter.SelectedIndex = 0
+        'ChkRole()
+        Me.SetFilter()
+        gvByCustomer.DataBind()
+    End Sub
+#End Region
 #End Region
     Protected Sub form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles form1.Load
         ChkSession()
+    End Sub
+    Protected Sub gvByCustomer_DataBound(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.DataBound
+        If gvByCustomer.Rows.Count <> 0 Then
+            lblByCusPage.Text = "(Page " & gvByCustomer.PageIndex + 1 & " / " & gvByCustomer.PageCount.ToString & ")"
+        Else
+            lblByCusPage.Text = ""
+        End If
+    End Sub
+    Protected Sub gvByCustomer_PageIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.PageIndexChanged
+        SetFilter()
     End Sub
     Protected Sub gvByCustomer_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.SelectedIndexChanged
         ClearData()
@@ -52,6 +95,13 @@ Partial Class ByCustomer_SM
     End Sub
     Protected Sub SqlDataByAccount_Selected(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.SqlDataSourceStatusEventArgs) Handles SqlDataByAccount.Selected
         lblCountByAcc.Text = "(จำนวนบัญชี: " & e.AffectedRows & " บัญชี)"
+    End Sub
+    Protected Sub gvByAccount_DataBound(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByAccount.DataBound
+        If gvByAccount.Rows.Count <> 0 Then
+            lblByAccPage.Text = "(Page " & gvByAccount.PageIndex + 1 & " / " & gvByAccount.PageCount.ToString & ")"
+        Else
+            lblByAccPage.Text = ""
+        End If
     End Sub
     Protected Sub gvByAccount_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByAccount.SelectedIndexChanged
         MultiView1.ActiveViewIndex = 1
@@ -126,5 +176,8 @@ Partial Class ByCustomer_SM
     End Sub
     Protected Sub btCancle_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btCancle.Click
         Switchview()
+    End Sub
+    Protected Sub gvByCustomer_Sorted(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.Sorted
+        SetFilter()
     End Sub
 End Class
