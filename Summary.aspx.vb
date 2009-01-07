@@ -96,6 +96,28 @@ Partial Class Summary
             Response.Redirect("logout.aspx")
         End If
     End Sub
+    Sub RefreshData()
+        '== Refresh Week 1
+        SqlDataTDRWeek1.DataBind()
+        SqlDataNonTDRWeek1.DataBind()
+        gvSumWeekTDR1.DataBind()
+        gvSumWeekNonTDR1.DataBind()
+        '== Refresh Week 2
+        SqlDataTDRWeek2.DataBind()
+        SqlDataNonTDRWeek2.DataBind()
+        gvSumWeekTDR2.DataBind()
+        gvSumWeekNonTDR2.DataBind()
+        '== Refresh Week 3
+        SqlDataTDRWeek3.DataBind()
+        SqlDataNonTDRWeek3.DataBind()
+        gvSumWeekTDR3.DataBind()
+        gvSumWeekNonTDR3.DataBind()
+        '== Refresh Week 4
+        SqlDataTDRWeek4.DataBind()
+        SqlDataNonTDRWeek4.DataBind()
+        gvSumWeekTDR4.DataBind()
+        gvSumWeekNonTDR4.DataBind()
+    End Sub
 #Region "Week01"
     Protected Sub gvSumWeek01_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvSumWeekTDR1.Init
         CountNoOfCustW01TDR = 0.0
@@ -324,26 +346,7 @@ Partial Class Summary
     End Sub
 #End Region
     Protected Sub imbRefreash_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles imbRefreash.Click
-        '== Refresh Week 1
-        SqlDataTDRWeek1.DataBind()
-        SqlDataNonTDRWeek1.DataBind()
-        gvSumWeekTDR1.DataBind()
-        gvSumWeekNonTDR1.DataBind()
-        '== Refresh Week 2
-        SqlDataTDRWeek2.DataBind()
-        SqlDataNonTDRWeek2.DataBind()
-        gvSumWeekTDR2.DataBind()
-        gvSumWeekNonTDR2.DataBind()
-        '== Refresh Week 3
-        SqlDataTDRWeek3.DataBind()
-        SqlDataNonTDRWeek3.DataBind()
-        gvSumWeekTDR3.DataBind()
-        gvSumWeekNonTDR3.DataBind()
-        '== Refresh Week 4
-        SqlDataTDRWeek4.DataBind()
-        SqlDataNonTDRWeek4.DataBind()
-        gvSumWeekTDR4.DataBind()
-        gvSumWeekNonTDR4.DataBind()
+        RefreshData()
     End Sub
     Protected Sub ImbLogout_Click(ByVal sender As Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles ImbLogout.Click
         Response.Redirect("logout.aspx")
@@ -357,5 +360,11 @@ Partial Class Summary
             lblDasofW3.Text = Session("DasofW3")
             lblDasofW4.Text = Session("DasofW4")
         End If
+    End Sub
+    Protected Sub dlAgingGroup_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dlAgingGroup.SelectedIndexChanged
+        RefreshData()
+    End Sub
+    Protected Sub dlCustsize_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dlCustsize.SelectedIndexChanged
+        RefreshData()
     End Sub
 End Class
