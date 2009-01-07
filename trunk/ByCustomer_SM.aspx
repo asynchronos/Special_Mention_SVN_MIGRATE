@@ -83,10 +83,10 @@ function chkaccountselect()
           Filter :
                     <asp:DropDownList ID="listFilter" runat="server">
                         <asp:ListItem>CIF</asp:ListItem>
-                        <asp:ListItem Value="NAME">ชื่อลูกค้า</asp:ListItem>
+                        <asp:ListItem Value="NAME">Name</asp:ListItem>
                         <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
                         <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
-                        <asp:ListItem Value="Office_Name">ชือผู้ดูแล</asp:ListItem>
+                        <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
                     </asp:DropDownList>
                     <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
                     <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
