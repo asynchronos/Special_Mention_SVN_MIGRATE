@@ -92,12 +92,12 @@ function chkaccountselect()
                     <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
                     <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
                     <asp:Panel ID="pnByCustomer" runat="server" ScrollBars="Auto" Width="790px" 
-            Height="350px">
+            Height="260px">
         <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
             AutoGenerateColumns="False" CellPadding="3" 
             GridLines="Horizontal" AllowPaging="True" AllowSorting="True" 
             DataKeyNames="CIF" BackColor="White" BorderColor="#E7E7FF" BorderStyle="Double" 
-            BorderWidth="1px" CellSpacing="1">
+            BorderWidth="1px" CellSpacing="1" PageSize="5">
             <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
             <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" Wrap="False" />
             <Columns>
@@ -227,10 +227,12 @@ function chkaccountselect()
     <br />
     <asp:Label ID="lblCountByAcc" runat="server"></asp:Label>
     <asp:Label ID="lblByAccPage" runat="server"></asp:Label>
+    <asp:Panel ID="pnByAccount" runat="server" ScrollBars="Auto" Height="250px" 
+        Width="790px">
     <asp:GridView ID="gvByAccount" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="ACCNO" DataSourceID="SqlDataByAccount" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
-        AllowSorting="True" CellSpacing="1">
+        AllowSorting="True" CellSpacing="1" PageSize="5">
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <RowStyle BackColor="#FFFBD6" ForeColor="#333333" Wrap="False" />
         <Columns>
@@ -291,6 +293,7 @@ function chkaccountselect()
             Font-Size="Small" />
         <AlternatingRowStyle BackColor="White" />
     </asp:GridView>
+   </asp:Panel>
         <asp:SqlDataSource ID="SqlDataByAccount" runat="server" 
         ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
         SelectCommand="SP_ByAccount" SelectCommandType="StoredProcedure">
