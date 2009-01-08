@@ -227,8 +227,6 @@ function chkaccountselect()
     <br />
     <asp:Label ID="lblCountByAcc" runat="server"></asp:Label>
     <asp:Label ID="lblByAccPage" runat="server"></asp:Label>
-    <asp:Panel ID="pnByAccount" runat="server" ScrollBars="Auto" Height="250px" 
-        Width="790px">
     <asp:GridView ID="gvByAccount" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="ACCNO" DataSourceID="SqlDataByAccount" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
@@ -293,7 +291,6 @@ function chkaccountselect()
             Font-Size="Small" />
         <AlternatingRowStyle BackColor="White" />
     </asp:GridView>
-   </asp:Panel>
         <asp:SqlDataSource ID="SqlDataByAccount" runat="server" 
         ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
         SelectCommand="SP_ByAccount" SelectCommandType="StoredProcedure">
