@@ -80,7 +80,17 @@ function chkaccountselect()
         <asp:Label ID="lblCountByCus" runat="server"></asp:Label>
         <asp:Label ID="lblByCusPage" runat="server"></asp:Label>
         <br />
-          Filter :
+          Filter :<asp:DropDownList ID="listFilter" runat="server">
+                        <asp:ListItem>CIF</asp:ListItem>
+                        <asp:ListItem Value="NAME">Name</asp:ListItem>
+                        <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
+                        <asp:ListItem Value="FlagHub">SBC</asp:ListItem>
+                        <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
+                        <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
+                    <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
+                    <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
                     <asp:Panel ID="pnByCustomer" runat="server" ScrollBars="Auto" Width="790px" 
             Height="350px">
         <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
@@ -180,19 +190,6 @@ function chkaccountselect()
             <AlternatingRowStyle BackColor="#F7F7F7" />
         </asp:GridView>
         </asp:Panel>
-        
-                    <asp:DropDownList ID="listFilter" runat="server">
-                        <asp:ListItem>CIF</asp:ListItem>
-                        <asp:ListItem Value="NAME">Name</asp:ListItem>
-                        <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
-                        <asp:ListItem Value="FlagHub">SBC</asp:ListItem>
-                        <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
-                        <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
-                    <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
-                    <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
-        
         <asp:SqlDataSource ID="SqlDataByCustomer" runat="server" 
             ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
             SelectCommand="SP_ByCustomer" SelectCommandType="StoredProcedure">
@@ -230,8 +227,6 @@ function chkaccountselect()
     <br />
     <asp:Label ID="lblCountByAcc" runat="server"></asp:Label>
     <asp:Label ID="lblByAccPage" runat="server"></asp:Label>
-    <asp:Panel ID="pnByAccount" runat="server" ScrollBars="Auto" Height="350px" 
-        Width="790px">
     <asp:GridView ID="gvByAccount" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="ACCNO" DataSourceID="SqlDataByAccount" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
@@ -296,7 +291,6 @@ function chkaccountselect()
             Font-Size="Small" />
         <AlternatingRowStyle BackColor="White" />
     </asp:GridView>
-    </asp:Panel>
         <asp:SqlDataSource ID="SqlDataByAccount" runat="server" 
         ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
         SelectCommand="SP_ByAccount" SelectCommandType="StoredProcedure">
