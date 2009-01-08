@@ -2,6 +2,8 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
+<%@ Register src="ExportControl/ExportControl.ascx" tagname="ExportControl" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -91,104 +93,103 @@ function chkaccountselect()
                     <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
                     <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
                     <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
+                    <uc1:ExportControl ID="ExportControl1" runat="server" 
+            controlName="gvByCustomer" filename="ByCustomer" />
                     <asp:Panel ID="pnByCustomer" runat="server" ScrollBars="Auto" Width="790px" 
             Height="260px">
-        <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
+                        <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
             AutoGenerateColumns="False" CellPadding="3" 
-            GridLines="Horizontal" AllowPaging="True" AllowSorting="True" 
+            GridLines="Horizontal" AllowPaging="True" 
             DataKeyNames="CIF" BackColor="White" BorderColor="#E7E7FF" BorderStyle="Double" 
             BorderWidth="1px" CellSpacing="1" PageSize="5">
-            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
-            <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" Wrap="False" />
-            <Columns>
-                <asp:CommandField ShowSelectButton="True" >
-                    <ItemStyle Wrap="False" />
-                </asp:CommandField>
-                <asp:BoundField DataField="CIF" HeaderText="CIF" SortExpression="CIF" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="TEL_HOME" HeaderText="home tel" 
+                            <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                            <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" Wrap="False" />
+                            <Columns>
+                                <asp:BoundField DataField="CIF" HeaderText="CIF" SortExpression="CIF" >
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" >
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="TEL_HOME" HeaderText="home tel" 
                     SortExpression="TEL_HOME" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="TEL_OFF" HeaderText="office tel" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="TEL_OFF" HeaderText="office tel" 
                     SortExpression="TEL_OFF" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="StatusG_Eng" HeaderText="Ststus Cust." 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="StatusG_Eng" HeaderText="Ststus Cust." 
                     SortExpression="Id_StatusG" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="TDR" HeaderText="TDR" SortExpression="TDR" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="AGINGCUS" HeaderText="Aging" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="TDR" HeaderText="TDR" SortExpression="TDR" >
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="AGINGCUS" HeaderText="Aging" 
                     SortExpression="AGINGCUS" DataFormatString="{0:n}" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="CLASSCUS" HeaderText="Class" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="CLASSCUS" HeaderText="Class" 
                     SortExpression="CLASSCUS" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="PrincipalCus" HeaderText="Principal" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="PrincipalCus" HeaderText="Principal" 
                     SortExpression="PrincipalCus" DataFormatString="{0:n}" >
-                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="AccruCus" HeaderText="Accru" 
+                                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="AccruCus" HeaderText="Accru" 
                     SortExpression="AccruCus" DataFormatString="{0:n}" >
-                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="SuspCus" HeaderText="Susp" 
+                                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="SuspCus" HeaderText="Susp" 
                     SortExpression="SuspCus" DataFormatString="{0:n}" >
-                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="PayML3CUS" HeaderText="Payment(2 Month ago)" 
+                                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="PayML3CUS" HeaderText="Payment(2 Month ago)" 
                     SortExpression="PayML2CUS" DataFormatString="{0:n}" >
-                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="PayMCUS" HeaderText="Payment(Last Month)" 
+                                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="PayMCUS" HeaderText="Payment(Last Month)" 
                     SortExpression="PayMCUS" DataFormatString="{0:n}" >
-                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="PayDCUS" 
+                                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="PayDCUS" 
                     HeaderText="Payment(1-Data as of This month)" SortExpression="PayDCUS" 
                     DataFormatString="{0:n}" >
-                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="LendingSubT" HeaderText="สายงาน" 
+                                    <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="LendingSubT" HeaderText="สายงาน" 
                     SortExpression="Id_LendingSub" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="FlagHub" HeaderText="SBC" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="FlagHub" HeaderText="SBC" 
                     SortExpression="FlagHub" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="DepTranT" HeaderText="Controlling Unit" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="DepTranT" HeaderText="Controlling Unit" 
                     SortExpression="DepTranT" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="Office_Name" HeaderText="Emp. Name" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="Office_Name" HeaderText="Emp. Name" 
                     SortExpression="Office_Name" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-                <asp:BoundField DataField="CUSTSIZE" HeaderText="Cust. size" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                                <asp:BoundField DataField="CUSTSIZE" HeaderText="Cust. size" 
                     SortExpression="CUSTSIZE" >
-                    <ItemStyle Wrap="False" />
-                </asp:BoundField>
-            </Columns>
-            <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
-            <EmptyDataTemplate>
-                <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#FF3300" 
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
+                            </Columns>
+                            <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+                            <EmptyDataTemplate>
+                                <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#FF3300" 
                     Text="Data customer not found !!"></asp:Label>
-            </EmptyDataTemplate>
-            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
-            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" 
+                            </EmptyDataTemplate>
+                            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" 
                 Font-Size="Small" />
-            <AlternatingRowStyle BackColor="#F7F7F7" />
-        </asp:GridView>
+                            <AlternatingRowStyle BackColor="#F7F7F7" />
+                        </asp:GridView>
         </asp:Panel>
         <asp:SqlDataSource ID="SqlDataByCustomer" runat="server" 
             ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 

@@ -2,6 +2,8 @@
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
 
+<%@ Register src="ExportControl/ExportControl.ascx" tagname="ExportControl" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -89,6 +91,8 @@
                 <asp:Label ID="lblDasofW1" runat="server"></asp:Label>
                 <br />
             <asp:Label ID="lblSumTDRW1" runat="server" Text="TDR" ForeColor="Red"></asp:Label>
+                <uc1:ExportControl ID="ExportControl1" runat="server" 
+                    controlName="gvSumWeekTDR1" filename="TDRWeek1" />
         <asp:GridView ID="gvSumWeekTDR1" runat="server" AutoGenerateColumns="False" 
             DataSourceID="SqlDataTDRWeek1" BackColor="White" BorderColor="#E7E7FF" 
             BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" 
