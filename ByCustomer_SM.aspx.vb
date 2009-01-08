@@ -89,6 +89,13 @@ Partial Class ByCustomer_SM
     Protected Sub gvByCustomer_PageIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.PageIndexChanged
         SetFilter()
     End Sub
+    Protected Sub gvByCustomer_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvByCustomer.RowDataBound
+        If e.Row.RowType = DataControlRowType.Header Or e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(0).Style("Position") = "relative"
+            e.Row.Cells(1).Style("Position") = "relative"
+            e.Row.Cells(2).Style("Position") = "relative"
+        End If
+    End Sub
     Protected Sub gvByCustomer_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.SelectedIndexChanged
         ClearData()
         MultiView1.ActiveViewIndex = 1
