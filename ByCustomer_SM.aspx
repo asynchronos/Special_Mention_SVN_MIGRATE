@@ -229,7 +229,7 @@ function chkaccountselect()
     <br />
     <asp:Label ID="lblCountByAcc" runat="server"></asp:Label>
     <asp:Label ID="lblByAccPage" runat="server"></asp:Label>
-    <asp:Panel ID="Panel1" runat="server">
+    <asp:Panel ID="pnByAccount" runat="server" ScrollBars="Both" Height="350px" Width="790px">
     <asp:GridView ID="gvByAccount" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="ACCNO" DataSourceID="SqlDataByAccount" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
