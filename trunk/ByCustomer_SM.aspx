@@ -92,7 +92,8 @@ function chkaccountselect()
                     <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
                     <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
                     <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
-                    &nbsp;&nbsp;
+        <asp:Panel ID="pnByCustomer" runat="server" ScrollBars="Both" Width="790px" 
+            Height="350px">
         <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
             AutoGenerateColumns="False" CellPadding="3" 
             GridLines="Horizontal" AllowPaging="True" AllowSorting="True" 
@@ -189,6 +190,8 @@ function chkaccountselect()
                 Font-Size="Small" />
             <AlternatingRowStyle BackColor="#F7F7F7" />
         </asp:GridView>
+        </asp:Panel>
+        
         <asp:SqlDataSource ID="SqlDataByCustomer" runat="server" 
             ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
             SelectCommand="SP_ByCustomer" SelectCommandType="StoredProcedure">
@@ -226,6 +229,7 @@ function chkaccountselect()
     <br />
     <asp:Label ID="lblCountByAcc" runat="server"></asp:Label>
     <asp:Label ID="lblByAccPage" runat="server"></asp:Label>
+    <asp:Panel ID="Panel1" runat="server">
     <asp:GridView ID="gvByAccount" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="ACCNO" DataSourceID="SqlDataByAccount" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
@@ -290,7 +294,8 @@ function chkaccountselect()
             Font-Size="Small" />
         <AlternatingRowStyle BackColor="White" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataByAccount" runat="server" 
+    </asp:Panel>
+        <asp:SqlDataSource ID="SqlDataByAccount" runat="server" 
         ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
         SelectCommand="SP_ByAccount" SelectCommandType="StoredProcedure">
         <SelectParameters>
