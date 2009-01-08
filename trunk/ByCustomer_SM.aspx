@@ -153,6 +153,10 @@ function chkaccountselect()
                     SortExpression="CUSTSIZE" />
             </Columns>
             <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+            <EmptyDataTemplate>
+                <asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="#FF3300" 
+                    Text="Data customer not found !!"></asp:Label>
+            </EmptyDataTemplate>
             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
             <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" 
                 Font-Size="Small" />
