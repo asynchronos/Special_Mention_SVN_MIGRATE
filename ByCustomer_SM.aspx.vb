@@ -88,7 +88,6 @@ Partial Class ByCustomer_SM
     End Sub
     Protected Sub gvByCustomer_PageIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.PageIndexChanged
         SetFilter()
-        ClearData()
     End Sub
     Protected Sub gvByCustomer_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvByCustomer.RowDataBound
         If e.Row.RowType = DataControlRowType.Header Or e.Row.RowType = DataControlRowType.DataRow Then
