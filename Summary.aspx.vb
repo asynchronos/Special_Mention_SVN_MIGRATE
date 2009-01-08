@@ -135,14 +135,14 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek01")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek01")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
@@ -158,13 +158,14 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek01")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
+
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek01")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('ByCustomer_SM.aspx?Week=01&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
@@ -188,14 +189,14 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek02")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel02.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek02")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel02.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
@@ -211,13 +212,13 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek02")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek02")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel02.aspx?Week=02&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
@@ -241,14 +242,14 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek03")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel03.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek03")
-                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel03.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
@@ -264,13 +265,13 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek03")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek03")
-                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel03.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
@@ -294,14 +295,14 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek04")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel04.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek04")
-                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel03.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
@@ -317,13 +318,13 @@ Partial Class Summary
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek04")
-                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                 End If
             Else 'ถ้าเป็น AO เปลี่ยน link ไปที่ ByCustomer_SM.aspx
                 If DirectCast(e.Row.FindControl("lblTDR"), Label).Text <> "-" Then
                     Dim imb As New ImageButton
                     imb = e.Row.FindControl("imgLinkWeek03")
-                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "');")
+                    imb.Attributes.Add("onclick", "javascript:window.open('Bycustomer_SM.aspx?Week=04&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');")
                     'imb.OnClientClick = "window.location.replace('SummaryLevel03.aspx?Week=03&Id_StatusG=" & e.Row.DataItem("Id_StatusG") & "&TDR=" & e.Row.DataItem("TDR") & "');return false;"
                 End If
             End If
