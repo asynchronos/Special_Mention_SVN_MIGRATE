@@ -30,6 +30,11 @@ Partial Class ByCustomer_SM
         lblDASOFtxt.Text = ""
         lblAPP_ID.Text = ""
     End Sub
+    Sub ClearAccount()
+        lblAccount.Text = ""
+        lblDASOFtxt.Text = ""
+        lblAPP_ID.Text = ""
+    End Sub
     Sub Switchview()
         If MultiView1.ActiveViewIndex = 0 Then
             MultiView1.ActiveViewIndex = 1
@@ -114,6 +119,9 @@ Partial Class ByCustomer_SM
         Else
             lblByAccPage.Text = ""
         End If
+    End Sub
+    Protected Sub gvByAccount_PageIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByAccount.PageIndexChanged
+        ClearAccount()
     End Sub
     Protected Sub gvByAccount_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvByAccount.RowDataBound
         If e.Row.RowType = DataControlRowType.Header Or e.Row.RowType = DataControlRowType.DataRow Then
