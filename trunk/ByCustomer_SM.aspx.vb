@@ -115,6 +115,14 @@ Partial Class ByCustomer_SM
             lblByAccPage.Text = ""
         End If
     End Sub
+    Protected Sub gvByAccount_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvByAccount.RowDataBound
+        If e.Row.RowType = DataControlRowType.Header Or e.Row.RowType = DataControlRowType.DataRow Then
+            e.Row.Cells(0).Style("Position") = "relative"
+            e.Row.Cells(1).Style("Position") = "relative"
+            e.Row.Cells(2).Style("Position") = "relative"
+            e.Row.Cells(3).Style("Position") = "relative"
+        End If
+    End Sub
     Protected Sub gvByAccount_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByAccount.SelectedIndexChanged
         MultiView1.ActiveViewIndex = 1
         lblAccount.Text = ""
