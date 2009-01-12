@@ -78,10 +78,6 @@ function chkaccountselect()
             Text="Data Customer Special Mention(SM : ง) " 
             style="font-weight: 700; color: #0000CC"></asp:Label>
         <br />
-        <asp:Label ID="lblByAccount_All" runat="server" Font-Bold="True" 
-            ForeColor="#0000CC" Text="Export all accounts"></asp:Label>
-                    <uc1:ExportControl ID="expByAccount_All" runat="server" 
-            controlName="gvByAccount_All" filename="ByAccount_All" />
         <asp:Label ID="lblByCustomer" runat="server" Text="Customer" Font-Bold="True" 
             ForeColor="#0000CC"></asp:Label>
         <asp:Label ID="lblCountByCus" runat="server"></asp:Label>
@@ -228,6 +224,10 @@ function chkaccountselect()
         </asp:SqlDataSource>
     
     </div>
+    <asp:Label ID="lblByAccount_All" runat="server" Font-Bold="True" 
+        ForeColor="#0000CC" Text="Export all accounts"></asp:Label>
+    <uc1:ExportControl ID="expByAccount_All" runat="server" 
+        controlName="gvByAccount_All" filename="ByAccount_All" />
     <asp:Label ID="lblByAccount" runat="server" Text="Detail Account CIF: " 
         style="font-weight: 700; color: #0000CC"></asp:Label>
     <asp:Label ID="lblCIF" runat="server" style="font-weight: 700; color: #0000CC"></asp:Label>
