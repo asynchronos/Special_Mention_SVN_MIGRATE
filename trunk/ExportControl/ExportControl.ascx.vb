@@ -39,20 +39,61 @@ Partial Class Controls_ExportControl_ExportControl
         Dim name As String = String.Empty
 
         For i As Integer = 0 To cont.Controls.Count - 1
-            If cont.Controls(i).GetType Is GetType(LinkButton) Then
-                l.Text = TryCast(cont.Controls(i), LinkButton).Text
+
+            Dim iButt As IButtonControl = Nothing
+            Dim listCon As ListControl = Nothing
+            Dim iCheckBox As ICheckBoxControl = Nothing
+
+            'Try
+            iButt = TryCast(cont.Controls(i), IButtonControl)
+            'Catch ex As InvalidCastException
+            'Try
+            listCon = TryCast(cont.Controls(i), ListControl)
+            'Catch ex2 As InvalidCastException
+            'Try
+            iCheckBox = TryCast(cont.Controls(i), ICheckBoxControl)
+            'Catch ex3 As InvalidCastException
+            ' can't cast to anything in list
+            ' use oiginal type of that control
+            'End Try
+            'End Try
+            'End Try
+
+            If Not IsNothing(iButt) Then
+                l.Text = iButt.Text
                 cont.Controls.Remove(cont.Controls(i))
                 cont.Controls.AddAt(i, l)
-                cont.Controls(i).Visible = False
-            ElseIf cont.Controls(i).[GetType]() Is GetType(DropDownList) Then
-                l.Text = TryCast(cont.Controls(i), DropDownList).SelectedItem.Text
+
+                Dim linkButt As LinkButton = Nothing
+
+                If l.Text.Equals("Select") Then
+                    cont.Controls(i).Visible = False
+                End If
+
+            ElseIf Not IsNothing(listCon) Then
+                l.Text = listCon.SelectedItem.Text
                 cont.Controls.Remove(cont.Controls(i))
                 cont.Controls.AddAt(i, l)
-            ElseIf cont.Controls(i).[GetType]() Is GetType(CheckBox) Then
-                l.Text = If(TryCast(cont.Controls(i), CheckBox).Checked, "True", "False")
+            ElseIf Not IsNothing(iCheckBox) Then
+                l.Text = If(iCheckBox.Checked, "True", "False")
                 cont.Controls.Remove(cont.Controls(i))
                 cont.Controls.AddAt(i, l)
             End If
+
+            'If cont.Controls(i).GetType Is GetType(IButtonControl) Then
+            '    l.Text = TryCast(cont.Controls(i), IButtonControl).Text
+            '    cont.Controls.Remove(cont.Controls(i))
+            '    cont.Controls.AddAt(i, l)
+            '    cont.Controls(i).Visible = False
+            'ElseIf cont.Controls(i).[GetType]() Is GetType(DropDownList) Then
+            '    l.Text = TryCast(cont.Controls(i), DropDownList).SelectedItem.Text
+            '    cont.Controls.Remove(cont.Controls(i))
+            '    cont.Controls.AddAt(i, l)
+            'ElseIf cont.Controls(i).[GetType]() Is GetType(CheckBox) Then
+            '    l.Text = If(TryCast(cont.Controls(i), CheckBox).Checked, "True", "False")
+            '    cont.Controls.Remove(cont.Controls(i))
+            '    cont.Controls.AddAt(i, l)
+            'End If
 
             If cont.Controls(i).HasControls() Then
                 PrepareControlForExport(cont.Controls(i))

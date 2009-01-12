@@ -78,7 +78,12 @@ function chkaccountselect()
             Text="Data Customer Special Mention(SM : ง) " 
             style="font-weight: 700; color: #0000CC"></asp:Label>
         <br />
-        <asp:Label ID="lblByCustomer" runat="server" Text="Customer"></asp:Label>
+        <asp:Label ID="lblByAccount_All" runat="server" Font-Bold="True" 
+            ForeColor="#0000CC" Text="Export all accounts"></asp:Label>
+                    <uc1:ExportControl ID="expByAccount_All" runat="server" 
+            controlName="gvByAccount_All" filename="ByAccount_All" />
+        <asp:Label ID="lblByCustomer" runat="server" Text="Customer" Font-Bold="True" 
+            ForeColor="#0000CC"></asp:Label>
         <asp:Label ID="lblCountByCus" runat="server"></asp:Label>
         <asp:Label ID="lblByCusPage" runat="server"></asp:Label>
         <br />
@@ -93,7 +98,7 @@ function chkaccountselect()
                     <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
                     <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
                     <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
-                    <uc1:ExportControl ID="ExportControl1" runat="server" 
+                    <uc1:ExportControl ID="expByCustomer" runat="server" 
             controlName="gvByCustomer" filename="ByCustomer" />
                     <asp:Panel ID="pnByCustomer" runat="server" ScrollBars="Auto" Width="790px" 
             Height="260px">
@@ -101,10 +106,12 @@ function chkaccountselect()
             AutoGenerateColumns="False" CellPadding="3" 
             GridLines="Horizontal" AllowPaging="True" 
             DataKeyNames="CIF" BackColor="White" BorderColor="#E7E7FF" BorderStyle="Double" 
-            BorderWidth="1px" CellSpacing="1" PageSize="5">
+            BorderWidth="1px" CellSpacing="1" PageSize="5" AllowSorting="True">
+                            <PagerSettings Mode="NumericFirstLast" />
                             <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
                             <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" Wrap="False" />
                             <Columns>
+                                <asp:CommandField ShowSelectButton="True" />
                                 <asp:BoundField DataField="CIF" HeaderText="CIF" SortExpression="CIF" >
                                     <ItemStyle Wrap="False" />
                                 </asp:BoundField>
@@ -119,7 +126,7 @@ function chkaccountselect()
                     SortExpression="TEL_OFF" >
                                     <ItemStyle Wrap="False" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="StatusG_Eng" HeaderText="Ststus Cust." 
+                                <asp:BoundField DataField="StatusG_Eng" HeaderText="Status Cust." 
                     SortExpression="Id_StatusG" >
                                     <ItemStyle Wrap="False" />
                                 </asp:BoundField>
@@ -228,10 +235,13 @@ function chkaccountselect()
     <br />
     <asp:Label ID="lblCountByAcc" runat="server"></asp:Label>
     <asp:Label ID="lblByAccPage" runat="server"></asp:Label>
+                    <uc1:ExportControl ID="expByAccount" runat="server" 
+            controlName="gvByAccount" filename="ByAccount" />
     <asp:GridView ID="gvByAccount" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="ACCNO" DataSourceID="SqlDataByAccount" 
         ForeColor="#333333" GridLines="None" AllowPaging="True" 
         AllowSorting="True" CellSpacing="1" PageSize="5">
+        <PagerSettings Mode="NumericFirstLast" />
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <RowStyle BackColor="#FFFBD6" ForeColor="#333333" Wrap="False" />
         <Columns>
@@ -392,6 +402,7 @@ function chkaccountselect()
                         AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
                         BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
                         DataSourceID="SqlDataAccount_Status" GridLines="Horizontal">
+                        <PagerSettings Mode="NumericFirstLast" />
                         <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
                         <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
                         <Columns>
@@ -424,6 +435,78 @@ function chkaccountselect()
                     </asp:GridView>
 
                 </asp:View>
+                 <asp:View ID="View3" runat="server">
+                 
+                     <asp:GridView ID="gvByAccount_All" runat="server" AllowPaging="True" 
+                         AutoGenerateColumns="False" DataKeyNames="ACCNO" 
+                         DataSourceID="SqlDataByAccount_All" PageSize="2">
+                         <RowStyle Wrap="False" />
+                         <Columns>
+                             <asp:BoundField DataField="CIF" HeaderText="CIF" />
+                             <asp:BoundField DataField="Name" HeaderText="Name" />
+                             <asp:BoundField DataField="ACCNO" HeaderText="ACCNO" SortExpression="ACCNO">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="APP_ID" HeaderText="APP_ID" SortExpression="APP_ID">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="DASOFtxt" HeaderText="DASOF" 
+                                 SortExpression="DASOFtxt">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="StatusG_Eng" HeaderText="Status Cus">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="Status_Eng" HeaderText="Status Acc" 
+                                 SortExpression="Id_Status" />
+                             <asp:BoundField DataField="AgingACC" DataFormatString="{0:n}" 
+                                 HeaderText="Aging" SortExpression="AgingACC">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="PRINCIPALACC" DataFormatString="{0:N}" 
+                                 HeaderText="Principal" SortExpression="PRINCIPALACC">
+                                 <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="ACCRUACC" DataFormatString="{0:N}" 
+                                 HeaderText="Accru" SortExpression="ACCRUACC">
+                                 <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="SUSPACC" DataFormatString="{0:N}" HeaderText="Susp" 
+                                 SortExpression="SUSPACC">
+                                 <ItemStyle HorizontalAlign="Right" Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="PayML2ACC" DataFormatString="{0:n}" 
+                                 HeaderText="Payment(2 Month ago)" SortExpression="PayML2ACC">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="PayMACC" DataFormatString="{0:n}" 
+                                 HeaderText="Payment(Last Month)" SortExpression="PayMACC">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="PayDACC" DataFormatString="{0:n}" 
+                                 HeaderText="Payment(1-Data as of This month)" SortExpression="PayDACC">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="LendingSubT" HeaderText="สายงาน">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="Hub_Name_T" HeaderText="SBC">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="DeptFlag" HeaderText="Dept Flag">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="Id_DepTran" HeaderText="Controlling Unit Code">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                             <asp:BoundField DataField="DepTranT" HeaderText="Controlling Unit">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
+                         </Columns>
+                         <HeaderStyle Font-Size="Small" />
+                     </asp:GridView>
+                 
+                 </asp:View>
             </asp:MultiView>
         </td>
         <td valign="top">
@@ -455,6 +538,32 @@ function chkaccountselect()
     </asp:SqlDataSource>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+        <asp:SqlDataSource ID="SqlDataByAccount_All" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
+        SelectCommand="SP_ByAccount_ROLE" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="Week" QueryStringField="Week" Type="String" />
+                <asp:QueryStringParameter Name="Id_StatusG" QueryStringField="Id_StatusG" 
+                    Type="String" />
+                <asp:QueryStringParameter Name="TDR" QueryStringField="TDR" Type="String" />
+                <asp:SessionParameter DefaultValue="" Name="ROLE" SessionField="ROLE" 
+                    Type="Byte" />
+                <asp:SessionParameter DefaultValue="" Name="USER_ID" SessionField="USER_ID" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="REGION" SessionField="REGION" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="BRANCH" SessionField="BRANCH" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="DEPT" SessionField="DEPT" 
+                    Type="String" />
+                <asp:QueryStringParameter DefaultValue="0" Name="CUSTSIZE" 
+                    QueryStringField="CUSTSIZE" Type="String" />
+                <asp:QueryStringParameter DefaultValue="0" Name="AgingGroup" 
+                    QueryStringField="AgingGroup" Type="String" />
+            </SelectParameters>
+    </asp:SqlDataSource>
     </form>
 </body>
 </html>
