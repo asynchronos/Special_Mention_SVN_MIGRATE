@@ -88,10 +88,9 @@
                     style="font-weight: 700; text-decoration: underline; color: #0000CC" 
                     Text="Week 1"></asp:Label>
                 <asp:Label ID="lblLabelDasofW1" runat="server" Text="Data as of : "></asp:Label>
-                <asp:Label ID="lblDasofW1" runat="server"></asp:Label>
-                <br />
+                <asp:Label ID="lblDasofW1" runat="server"></asp:Label><br />
             <asp:Label ID="lblSumTDRW1" runat="server" Text="TDR" ForeColor="Red"></asp:Label>
-                <uc1:ExportControl ID="ExportControl1" runat="server" 
+                <uc1:ExportControl ID="expSumWeekTDR1" runat="server" 
                     controlName="gvSumWeekTDR1" filename="TDRWeek1" />
         <asp:GridView ID="gvSumWeekTDR1" runat="server" AutoGenerateColumns="False" 
             DataSourceID="SqlDataTDRWeek1" BackColor="White" BorderColor="#E7E7FF" 
@@ -213,7 +212,8 @@
     
         <asp:Label ID="lblSumNonTDRW1" runat="server" Text="Non TDR" 
             ForeColor="#0000CC"></asp:Label>
-        <br />
+                <uc1:ExportControl ID="expSumWeekNonTDR1" runat="server" 
+                    controlName="gvSumWeekNonTDR1" filename="NonTDRWeek1" />
         <asp:GridView ID="gvSumWeekNonTDR1" runat="server" AutoGenerateColumns="False" 
             DataSourceID="SqlDataNonTDRWeek1" BackColor="White" BorderColor="#E7E7FF" 
             BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" 
@@ -343,7 +343,9 @@
                 <asp:Label ID="lblLabelDasofW2" runat="server" Text="Data as of : "></asp:Label>
                 <asp:Label ID="lblDasofW2" runat="server"></asp:Label>
                 <br />
-                <asp:Label ID="lblSumTDRW2" runat="server" ForeColor="Red" Text="TDR"></asp:Label><br />
+                <asp:Label ID="lblSumTDRW2" runat="server" ForeColor="Red" Text="TDR"></asp:Label>
+                <uc1:ExportControl ID="expSumWeekTDR2" runat="server" 
+                    controlName="gvSumWeekTDR2" filename="TDRWeek2" />
                 <asp:GridView ID="gvSumWeekTDR2" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" 
                     CellPadding="3" DataSourceID="SqlDataTDRWeek2" GridLines="Horizontal" 
@@ -467,6 +469,8 @@
                 </asp:SqlDataSource>
                 <asp:Label ID="lblSumNonTDRW2" runat="server" ForeColor="#0000CC" 
                     Text="Non TDR"></asp:Label>
+                <uc1:ExportControl ID="expSumWeekNonTDR2" runat="server" 
+                    controlName="gvSumWeekNonTDR2" filename="NonTDRWeek2" />
                 <asp:GridView ID="gvSumWeekNonTDR2" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" 
                     CellPadding="3" DataSourceID="SqlDataNonTDRWeek2" GridLines="Horizontal" 
@@ -596,7 +600,9 @@
                 <asp:Label ID="lblLabelDasofW3" runat="server" Text="Data as of : "></asp:Label>
                 <asp:Label ID="lblDasofW3" runat="server"></asp:Label>
                 <br />
-                <asp:Label ID="lblSumTDRW3" runat="server" ForeColor="Red" Text="TDR"></asp:Label><br />
+                <asp:Label ID="lblSumTDRW3" runat="server" ForeColor="Red" Text="TDR"></asp:Label>
+                <uc1:ExportControl ID="expSumWeekTDR3" runat="server" 
+                    controlName="gvSumWeekTDR3" filename="TDRWeek3" />
                 <asp:GridView ID="gvSumWeekTDR3" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" 
                     CellPadding="3" DataSourceID="SqlDataTDRWeek3" GridLines="Horizontal" 
@@ -720,6 +726,8 @@
                 </asp:SqlDataSource>
                 <asp:Label ID="lblSumNonTDRW3" runat="server" ForeColor="#0000CC" 
                     Text="Non TDR"></asp:Label>
+                <uc1:ExportControl ID="expSumWeekNonTDR3" runat="server" 
+                    controlName="gvSumWeekNonTDR3" filename="NonTDRWeek3" />
                 <asp:GridView ID="gvSumWeekNonTDR3" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" 
                     CellPadding="3" DataSourceID="SqlDataNonTDRWeek3" GridLines="Horizontal" 
@@ -849,7 +857,9 @@
                 <asp:Label ID="lblLabelDasofW4" runat="server" Text="Data as of : "></asp:Label>
                 <asp:Label ID="lblDasofW4" runat="server"></asp:Label>
                 <br />
-                <asp:Label ID="Label18" runat="server" ForeColor="Red" Text="TDR"></asp:Label><br />
+                <asp:Label ID="Label18" runat="server" ForeColor="Red" Text="TDR"></asp:Label>
+                <uc1:ExportControl ID="expSumWeekTDR4" runat="server" 
+                    controlName="gvSumWeekTDR4" filename="TDRWeek4" />
                 <asp:GridView ID="gvSumWeekTDR4" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" 
                     CellPadding="3" DataSourceID="SqlDataTDRWeek4" GridLines="Horizontal" 
@@ -973,6 +983,8 @@
                 </asp:SqlDataSource>
                 <asp:Label ID="Label19" runat="server" ForeColor="#0000CC" 
                     Text="Non TDR"></asp:Label>
+                <uc1:ExportControl ID="expSumWeekNonTDR4" runat="server" 
+                    controlName="gvSumWeekNonTDR4" filename="NonTDRWeek4" />
                 <asp:GridView ID="gvSumWeekNonTDR4" runat="server" AutoGenerateColumns="False" 
                     BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" 
                     CellPadding="3" DataSourceID="SqlDataNonTDRWeek4" GridLines="Horizontal" 
