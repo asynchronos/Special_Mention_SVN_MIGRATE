@@ -87,7 +87,7 @@ function chkaccountselect()
                         <asp:ListItem>CIF</asp:ListItem>
                         <asp:ListItem Value="NAME">Name</asp:ListItem>
                         <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
-                        <asp:ListItem Value="FlagHub">SBC</asp:ListItem>
+                        <asp:ListItem Value="Hub_Name_T">SBC</asp:ListItem>
                         <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
                         <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
                     </asp:DropDownList>
@@ -166,8 +166,8 @@ function chkaccountselect()
                     SortExpression="Id_LendingSub" >
                                     <ItemStyle Wrap="False" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="FlagHub" HeaderText="SBC" 
-                    SortExpression="FlagHub" >
+                                <asp:BoundField DataField="Hub_Name_T" HeaderText="SBC" 
+                    SortExpression="Hub_Name_T" >
                                     <ItemStyle Wrap="False" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="DepTranT" HeaderText="Controlling Unit" 
