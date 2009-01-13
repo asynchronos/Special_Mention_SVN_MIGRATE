@@ -90,6 +90,7 @@ function chkaccountselect()
                         <asp:ListItem Value="Hub_Name_T">SBC</asp:ListItem>
                         <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
                         <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
+                        <asp:ListItem Value="CUSTSIZE">Cust.size</asp:ListItem>
                     </asp:DropDownList>
                     <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
                     <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
