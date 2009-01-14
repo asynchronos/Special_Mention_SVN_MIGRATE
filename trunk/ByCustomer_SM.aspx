@@ -474,7 +474,7 @@ function chkaccountselect()
                             <td class="style4" valign="top">
                                 Promise date &nbsp;</td>
                             <td valign="top">
-                                <div ID="divDatePromise" runat="server" style="white-space:nowrap;visibility:hidden;">
+                                <div ID="divDatePromise" runat="server" style="display:none;">
                                     <asp:TextBox ID="txtDatePromise" runat="server" onFocus="this.blur();"></asp:TextBox>
                                     <cc1:CalendarExtender ID="calDatePromise" runat="server" Format="dd/MM/yyyy" 
                                         PopupButtonID="imbDatePromise" TargetControlID="txtDatePromise">
