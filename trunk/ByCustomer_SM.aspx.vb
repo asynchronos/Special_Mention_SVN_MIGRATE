@@ -42,34 +42,34 @@ Partial Class ByCustomer_SM
             MultiView1.ActiveViewIndex = 0
         End If
     End Sub
-    Sub checkHiddenShow()
+    Sub checknoneinline()
         'ตรวจสอบ filter
         If listFilter.SelectedValue = "DepTranT" Then
-            divdlControllingUnit.Style("visibility") = "show"
-            divfiltertextBox.Style("visibility") = "hidden"
-            divSBC.Style("visibility") = "hidden"
-            divId_CustSize.Style("visibility") = "hidden"
+            divdlControllingUnit.Style("display") = "inline"
+            divfiltertextBox.Style("display") = "none"
+            divSBC.Style("display") = "none"
+            divId_CustSize.Style("display") = "none"
         ElseIf listFilter.SelectedValue = "CUSTSIZE" Then
-            divdlControllingUnit.Style("visibility") = "hidden"
-            divfiltertextBox.Style("visibility") = "hidden"
-            divSBC.Style("visibility") = "hidden"
-            divId_CustSize.Style("visibility") = "show"
+            divdlControllingUnit.Style("display") = "none"
+            divfiltertextBox.Style("display") = "none"
+            divSBC.Style("display") = "none"
+            divId_CustSize.Style("display") = "inline"
         ElseIf listFilter.SelectedValue = "Hub_Name_T" Then
-            divdlControllingUnit.Style("visibility") = "hidden"
-            divfiltertextBox.Style("visibility") = "hidden"
-            divSBC.Style("visibility") = "show"
-            divId_CustSize.Style("visibility") = "hidden"
+            divdlControllingUnit.Style("display") = "none"
+            divfiltertextBox.Style("display") = "none"
+            divSBC.Style("display") = "inline"
+            divId_CustSize.Style("display") = "none"
         Else
-            divdlControllingUnit.Style("visibility") = "hidden"
-            divfiltertextBox.Style("visibility") = "show"
-            divSBC.Style("visibility") = "hidden"
-            divId_CustSize.Style("visibility") = "hidden"
+            divdlControllingUnit.Style("display") = "none"
+            divfiltertextBox.Style("display") = "inline"
+            divSBC.Style("display") = "none"
+            divId_CustSize.Style("display") = "none"
         End If
         'ตรวจสอบ วันที่สัญญาว่าจะจ่าย
         If dlId_Status.SelectedValue = "31" Or dlId_Status.SelectedValue = "43" Then
-            divDatePromise.Style("visibility") = "show"
+            divDatePromise.Style("display") = "inline"
         Else
-            divDatePromise.Style("visibility") = "hidden"
+            divDatePromise.Style("display") = "none"
         End If
     End Sub
 #Region "Filter"
@@ -109,7 +109,7 @@ Partial Class ByCustomer_SM
     Protected Sub clearFilterButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles clearFilterButton.Click
         Me.filterTextBox.Text = ""
         Me.listFilter.SelectedIndex = 0
-        checkHiddenShow()
+        checknoneinline()
         'ChkRole()
         Me.SetFilter()
         gvByCustomer.DataBind()
@@ -236,7 +236,7 @@ Partial Class ByCustomer_SM
         If Not Me.IsPostBack Then
             MultiView1.ActiveViewIndex = 1
         End If
-        checkHiddenShow()
+        checknoneinline()
     End Sub
     Protected Sub btCancle_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btCancle.Click
         Switchview()

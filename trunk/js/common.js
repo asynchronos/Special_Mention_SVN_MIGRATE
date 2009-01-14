@@ -53,6 +53,11 @@ function hide(divId) {
     else ele(divId).style.visibility = "hidden";
 }
 
+//change display style
+function changeDisplay(domId,displayValue){
+    ele(domId).style.display = displayValue;
+}
+
 // <summary>
 // find value in query string by key
 // </summmary>

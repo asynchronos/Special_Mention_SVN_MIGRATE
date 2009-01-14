@@ -46,9 +46,9 @@ function chkaccountselect()
     //alert(dlId_Status.options[dlId_Status.selectedIndex].value+":"+dlId_Status.options[dlId_Status.selectedIndex].text);
     
     if (dlId_Status.options[dlId_Status.selectedIndex].value == "31" || dlId_Status.options[dlId_Status.selectedIndex].value == "43"){
-        show(divDatePromise.id);
+        changeDisplay(divDatePromise.id,"inline");
     }else{
-        hide(divDatePromise.id);
+        changeDisplay(divDatePromise.id,"none");
     }
  }
  
@@ -62,25 +62,25 @@ function chkaccountselect()
     //alert(dlId_Status.options[dlId_Status.selectedIndex].value+":"+dlId_Status.options[dlId_Status.selectedIndex].text);
     
     if (listFilter.options[listFilter.selectedIndex].value == "DepTranT"){
-        show(divdlControllingUnit.id);
-        hide(divfiltertextBox.id);
-        hide(divSBC.id);
-        hide(divId_CustSize.id);
+        changeDisplay(divdlControllingUnit.id,"inline");
+        changeDisplay(divfiltertextBox.id,"none");
+        changeDisplay(divSBC.id,"none");
+        changeDisplay(divId_CustSize.id,"none");
     }else if (listFilter.options[listFilter.selectedIndex].value == "CUSTSIZE"){
-        hide(divfiltertextBox.id);
-        hide(divdlControllingUnit.id);
-        hide(divSBC.id);
-        show(divId_CustSize.id);
+        changeDisplay(divfiltertextBox.id,"none");
+        changeDisplay(divdlControllingUnit.id,"none");
+        changeDisplay(divSBC.id,"none");
+        changeDisplay(divId_CustSize.id,"inline");
     }else if (listFilter.options[listFilter.selectedIndex].value == "Hub_Name_T"){
-        hide(divfiltertextBox.id);
-        hide(divdlControllingUnit.id);
-        show(divSBC.id);
-        hide(divId_CustSize.id);
+        changeDisplay(divfiltertextBox.id,"none");
+        changeDisplay(divdlControllingUnit.id,"none");
+        changeDisplay(divSBC.id,"inline");
+        changeDisplay(divId_CustSize.id,"none");
     }else{
-        show(divfiltertextBox.id);
-        hide(divdlControllingUnit.id);
-        hide(divSBC.id);
-        hide(divId_CustSize.id);
+        changeDisplay(divfiltertextBox.id,"inline");
+        changeDisplay(divdlControllingUnit.id,"none");
+        changeDisplay(divSBC.id,"none");
+        changeDisplay(divId_CustSize.id,"none");
     }
  }
 </script>
@@ -126,23 +126,23 @@ function chkaccountselect()
                    <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
                    <asp:ListItem Value="CUSTSIZE">Cust.size</asp:ListItem>
                     </asp:DropDownList>      
-        </td><td valign="top" width="200px">
-               <div id="divfiltertextBox" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+        </td><td valign="top">
+               <div id="divfiltertextBox" runat="server" style="display:inline;">
             <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
        </div>
-       <div id="divdlControllingUnit" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+       <div id="divdlControllingUnit" runat="server" style="display:inline;">
        <asp:DropDownList ID="dlControllingUnit" runat="server" 
             DataSourceID="SqlDataByCustomerControllingUnit" DataTextField="DepTrant" 
             DataValueField="DepTrant">
             </asp:DropDownList>
        </div>
-              <div id="divSBC" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+              <div id="divSBC" runat="server" style="display:inline;">
       <asp:DropDownList ID="dlSBC" runat="server" 
             DataSourceID="SqlDataByCustomerSBC" DataTextField="Hub_Name_T" 
             DataValueField="Hub_Name_T">
             </asp:DropDownList>
        </div>
-       <div id="divId_CustSize" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+       <div id="divId_CustSize" runat="server" style="display:inline;">
        <asp:DropDownList ID="dlId_CustSize" runat="server"
                    DataSourceID="SqlDataId_CustSize" DataTextField="Custsize" 
             DataValueField="id_CustSize">
