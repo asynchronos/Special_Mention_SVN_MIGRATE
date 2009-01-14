@@ -52,6 +52,37 @@ function chkaccountselect()
     }
  }
  
+ function ShowHidefilterExp(sender,target,target2,target3,target4,e){
+    var listFilter = sender;
+    var divfiltertextBox = target;
+    var divdlControllingUnit = target2;
+    var divId_CustSize = target3;
+    var divSBC = target4;
+    
+    //alert(dlId_Status.options[dlId_Status.selectedIndex].value+":"+dlId_Status.options[dlId_Status.selectedIndex].text);
+    
+    if (listFilter.options[listFilter.selectedIndex].value == "DepTranT"){
+        show(divdlControllingUnit.id);
+        hide(divfiltertextBox.id);
+        hide(divSBC.id);
+        hide(divId_CustSize.id);
+    }else if (listFilter.options[listFilter.selectedIndex].value == "CUSTSIZE"){
+        hide(divfiltertextBox.id);
+        hide(divdlControllingUnit.id);
+        hide(divSBC.id);
+        show(divId_CustSize.id);
+    }else if (listFilter.options[listFilter.selectedIndex].value == "Hub_Name_T"){
+        hide(divfiltertextBox.id);
+        hide(divdlControllingUnit.id);
+        show(divSBC.id);
+        hide(divId_CustSize.id);
+    }else{
+        show(divfiltertextBox.id);
+        hide(divdlControllingUnit.id);
+        hide(divSBC.id);
+        hide(divId_CustSize.id);
+    }
+ }
 </script>
     <style type="text/css">
         .style1
@@ -83,23 +114,53 @@ function chkaccountselect()
         <asp:Label ID="lblCountByCus" runat="server"></asp:Label>
         <asp:Label ID="lblByCusPage" runat="server"></asp:Label>
         <br />
-          Filter :<asp:DropDownList ID="listFilter" runat="server">
-                        <asp:ListItem>CIF</asp:ListItem>
-                        <asp:ListItem Value="NAME">Name</asp:ListItem>
-                        <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
-                        <asp:ListItem Value="Hub_Name_T">SBC</asp:ListItem>
-                        <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
-                        <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
-                        <asp:ListItem Value="CUSTSIZE">Cust.size</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
-                    <asp:Button ID="setFilterButton" runat="server" Text="Filter" />
-                    <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
+        <table>
+        <tr>
+                <td valign="top">
+         Filter :<asp:DropDownList ID="listFilter" runat="server" onchange="ShowHidefilterExp(this,ele('divfiltertextBox'),ele('divdlControllingUnit'),ele('divId_CustSize'),ele('divSBC'),event);">
+                  <asp:ListItem>CIF</asp:ListItem>
+                  <asp:ListItem Value="NAME">Name</asp:ListItem>
+                  <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
+                  <asp:ListItem Value="Hub_Name_T">SBC</asp:ListItem>
+                   <asp:ListItem Value="DepTranT">Controlling Unit</asp:ListItem>
+                   <asp:ListItem Value="Office_Name">Emp.Name</asp:ListItem>
+                   <asp:ListItem Value="CUSTSIZE">Cust.size</asp:ListItem>
+                    </asp:DropDownList>      
+        </td><td valign="top" width="200px">
+               <div id="divfiltertextBox" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+            <asp:TextBox ID="filterTextBox" runat="server"></asp:TextBox>
+       </div>
+       <div id="divdlControllingUnit" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+       <asp:DropDownList ID="dlControllingUnit" runat="server" 
+            DataSourceID="SqlDataByCustomerControllingUnit" DataTextField="DepTrant" 
+            DataValueField="DepTrant">
+            </asp:DropDownList>
+       </div>
+              <div id="divSBC" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+      <asp:DropDownList ID="dlSBC" runat="server" 
+            DataSourceID="SqlDataByCustomerSBC" DataTextField="Hub_Name_T" 
+            DataValueField="Hub_Name_T">
+            </asp:DropDownList>
+       </div>
+       <div id="divId_CustSize" runat="server" style="white-space:nowrap;visibility:hidden;position:absolute;">
+       <asp:DropDownList ID="dlId_CustSize" runat="server"
+                   DataSourceID="SqlDataId_CustSize" DataTextField="Custsize" 
+            DataValueField="id_CustSize">
+            </asp:DropDownList>
+       </div>
+       </td><td valign="top">
+                <asp:Button ID="setFilterButton" runat="server" Text="Filter" />               
+                <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
+                        
+        </td>
+        </tr>
+        </table>
+
                     <uc1:ExportControl ID="expByCustomer" runat="server" 
             controlName="gvByCustomer" filename="ByCustomer" />
                     <asp:Panel ID="pnByCustomer" runat="server" ScrollBars="Auto" Width="790px" 
             Height="260px">
-                        <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
+            <asp:GridView ID="gvByCustomer" runat="server" DataSourceID="SqlDataByCustomer" 
             AutoGenerateColumns="False" CellPadding="3" 
             GridLines="Horizontal" AllowPaging="True" 
             DataKeyNames="CIF" BackColor="White" BorderColor="#E7E7FF" BorderStyle="Double" 
@@ -224,6 +285,67 @@ function chkaccountselect()
             </SelectParameters>
         </asp:SqlDataSource>
     
+        <asp:SqlDataSource ID="SqlDataByCustomerControllingUnit" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
+            SelectCommand="SP_ByCustomerControllingUnit" 
+            SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="Week" QueryStringField="Week" Type="String" />
+                <asp:QueryStringParameter Name="Id_StatusG" QueryStringField="Id_StatusG" 
+                    Type="String" />
+                <asp:QueryStringParameter Name="TDR" QueryStringField="TDR" Type="String" />
+                <asp:SessionParameter DefaultValue="" Name="ROLE" SessionField="ROLE" 
+                    Type="Byte" />
+                <asp:SessionParameter DefaultValue="0" Name="USER_ID" SessionField="USER_ID" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="REGION" SessionField="REGION" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="BRANCH" SessionField="BRANCH" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="DEPT" SessionField="DEPT" 
+                    Type="String" />
+                <asp:QueryStringParameter Name="CUSTSIZE" QueryStringField="CUSTSIZE" 
+                    Type="String" />
+                <asp:QueryStringParameter DefaultValue="" Name="AgingGroup" 
+                    QueryStringField="AgingGroup" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+    
+        <asp:SqlDataSource ID="SqlDataId_CustSize" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
+            
+            SelectCommand="SELECT Id_CUSTSIZE, CUSTSIZE FROM Id_Custsize WHERE (Id_CUSTSIZE &lt;&gt; '0')">
+        </asp:SqlDataSource>
+    
+        <asp:SqlDataSource ID="SqlDataByCustomerSBC" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
+            SelectCommand="SP_ByCustomerSBC" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="Week" QueryStringField="Week" Type="String" />
+                <asp:QueryStringParameter Name="Id_StatusG" QueryStringField="Id_StatusG" 
+                    Type="String" />
+                <asp:QueryStringParameter Name="TDR" QueryStringField="TDR" Type="String" />
+                <asp:SessionParameter Name="ROLE" SessionField="ROLE" Type="Byte" 
+                    DefaultValue="0" />
+                <asp:SessionParameter DefaultValue="0" Name="USER_ID" SessionField="USER_ID" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="REGION" SessionField="REGION" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="BRANCH" SessionField="BRANCH" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="DEPT" SessionField="DEPT" 
+                    Type="String" />
+                <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
+                    QueryStringField="CUSTSIZE" Type="String" />
+                <asp:QueryStringParameter Name="AgingGroup" QueryStringField="AgingGroup" 
+                    Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+    
     </div>
     <asp:Label ID="lblByAccount_All" runat="server" Font-Bold="True" 
         ForeColor="#0000CC" Text="Export all accounts"></asp:Label>
@@ -249,7 +371,8 @@ function chkaccountselect()
             <asp:CommandField ShowSelectButton="True" >
                 <ItemStyle Wrap="False" />
             </asp:CommandField>
-            <asp:BoundField DataField="ACCNO" HeaderText="ACCNO" SortExpression="ACCNO" >
+            <asp:BoundField DataField="ACCNO" HeaderText="ACCNO" SortExpression="ACCNO" 
+                DataFormatString="{0:000000000000#}" >
                 <ItemStyle Wrap="False" />
             </asp:BoundField>
             <asp:BoundField DataField="DASOFtxt" HeaderText="DASOF" 
@@ -343,7 +466,7 @@ function chkaccountselect()
                                 <asp:DropDownList ID="dlId_Status" runat="server" 
                                     DataSourceID="SqlDataId_Status" DataTextField="Status" 
                                     DataValueField="Id_Status" 
-                                    onchange="showHideDivDatePromise(this,ele('divDatePromise'),event);">
+                                                                        onchange="showHideDivDatePromise(this,ele('divDatePromise'),event);">
                                 </asp:DropDownList>
                                 <span class="style5">*</span></td>
                         </tr>
@@ -351,7 +474,7 @@ function chkaccountselect()
                             <td class="style4" valign="top">
                                 Promise date &nbsp;</td>
                             <td valign="top">
-                                <div ID="divDatePromise" style="white-space:nowrap;visibility:hidden;">
+                                <div ID="divDatePromise" runat="server" style="white-space:nowrap;visibility:hidden;">
                                     <asp:TextBox ID="txtDatePromise" runat="server" onFocus="this.blur();"></asp:TextBox>
                                     <cc1:CalendarExtender ID="calDatePromise" runat="server" Format="dd/MM/yyyy" 
                                         PopupButtonID="imbDatePromise" TargetControlID="txtDatePromise">
