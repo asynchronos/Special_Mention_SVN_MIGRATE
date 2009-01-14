@@ -387,10 +387,6 @@ function chkaccountselect()
                 SortExpression="Id_Status" >
                 <ItemStyle Wrap="False" />
             </asp:BoundField>
-            <asp:BoundField DataField="Status_Thai" HeaderText="Status Thai" 
-                SortExpression="Status_Thai" >
-                <ItemStyle Wrap="False" />
-            </asp:BoundField>
             <asp:BoundField DataField="AgingACC" DataFormatString="{0:n}" 
                 HeaderText="Aging" SortExpression="AgingACC" >
                 <ItemStyle Wrap="False" />
