@@ -415,6 +415,12 @@ function chkaccountselect()
                 HeaderText="Payment(1-Data as of This month)" SortExpression="PayDACC" >
                 <ItemStyle Wrap="False" />
             </asp:BoundField>
+            <asp:BoundField DataField="ORGDUEPMT" DataFormatString="{0:n}" 
+                HeaderText="เงื่อนไขที่ต้องชำระ" SortExpression="ORGDUEPMT" />
+            <asp:BoundField DataField="TOTPASTDUE" DataFormatString="{0:n}" 
+                HeaderText="ยอดค้างชำระที่ผ่านมา" SortExpression="TOTPASTDUE" />
+            <asp:BoundField DataField="PAYAMT" DataFormatString="{0:n}" 
+                HeaderText="ยอดที่ต้องจ่ายในเดือนนี้" SortExpression="PAYAMT" />
         </Columns>
         <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
         <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
@@ -473,8 +479,7 @@ function chkaccountselect()
                                 <div ID="divDatePromise" runat="server" style="display:none;">
                                     <asp:TextBox ID="txtDatePromise" runat="server" onFocus="this.blur();"></asp:TextBox>
                                     <cc1:CalendarExtender ID="calDatePromise" runat="server" Format="dd/MM/yyyy" 
-                                        PopupButtonID="imbDatePromise" TargetControlID="txtDatePromise">
-                                    </cc1:CalendarExtender>
+                                        PopupButtonID="imbDatePromise" TargetControlID="txtDatePromise"></cc1:CalendarExtender>
                                     <asp:ImageButton ID="imbDatePromise" runat="server" 
                                         ImageUrl="~/Images/Calendar-Logo-16x16-32.ico" />
                                     <span class="style5">*</span>
@@ -607,6 +612,12 @@ function chkaccountselect()
                                  HeaderText="Payment(1-Data as of This month)" SortExpression="PayDACC">
                                  <ItemStyle Wrap="False" />
                              </asp:BoundField>
+                             <asp:BoundField DataField="ORGDUEPMT" HeaderText="เงื่อนไขที่ต้องชำระ" 
+                                 SortExpression="ORGDUEPMT" DataFormatString="{0:n}" />
+                             <asp:BoundField DataField="TOTPASTDUE" HeaderText="ยอดค้างชำระที่ผ่านมา" 
+                                 SortExpression="TOTPASTDUE" DataFormatString="{0:n}" />
+                             <asp:BoundField DataField="PAYAMT" HeaderText="ยอดที่ต้องจ่ายในเดือนนี้" 
+                                 SortExpression="PAYAMT" DataFormatString="{0:n}" />
                              <asp:BoundField DataField="LendingSubT" HeaderText="สายงาน">
                                  <ItemStyle Wrap="False" />
                              </asp:BoundField>
