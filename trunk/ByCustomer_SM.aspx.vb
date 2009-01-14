@@ -42,31 +42,65 @@ Partial Class ByCustomer_SM
             MultiView1.ActiveViewIndex = 0
         End If
     End Sub
+    Sub checkHiddenShow()
+        'ตรวจสอบ filter
+        If listFilter.SelectedValue = "DepTranT" Then
+            divdlControllingUnit.Style("visibility") = "show"
+            divfiltertextBox.Style("visibility") = "hidden"
+            divSBC.Style("visibility") = "hidden"
+            divId_CustSize.Style("visibility") = "hidden"
+        ElseIf listFilter.SelectedValue = "CUSTSIZE" Then
+            divdlControllingUnit.Style("visibility") = "hidden"
+            divfiltertextBox.Style("visibility") = "hidden"
+            divSBC.Style("visibility") = "hidden"
+            divId_CustSize.Style("visibility") = "show"
+        ElseIf listFilter.SelectedValue = "Hub_Name_T" Then
+            divdlControllingUnit.Style("visibility") = "hidden"
+            divfiltertextBox.Style("visibility") = "hidden"
+            divSBC.Style("visibility") = "show"
+            divId_CustSize.Style("visibility") = "hidden"
+        Else
+            divdlControllingUnit.Style("visibility") = "hidden"
+            divfiltertextBox.Style("visibility") = "show"
+            divSBC.Style("visibility") = "hidden"
+            divId_CustSize.Style("visibility") = "hidden"
+        End If
+        'ตรวจสอบ วันที่สัญญาว่าจะจ่าย
+        If dlId_Status.SelectedValue = "31" Or dlId_Status.SelectedValue = "43" Then
+            divDatePromise.Style("visibility") = "show"
+        Else
+            divDatePromise.Style("visibility") = "hidden"
+        End If
+    End Sub
 #Region "Filter"
     Protected Sub SetFilter()
         'ChkRole()
         Dim filterExpression As String = ""
-        If Me.filterTextBox.Text <> "" Then ' ถ้า ไม่คีย์เงื่อนไข จะไม่ทำเลย
-            If listFilter.SelectedValue = "CIF" Then
-                If IsNumeric(Me.filterTextBox.Text) Then
-                    filterExpression = listFilter.SelectedValue & "=" & Me.filterTextBox.Text & ""
-                    Response.Write("<font size=3 color=red>Filter expression in effect is: " & filterExpression & "</font>")
-                Else
-                    Response.Write("<font size=3 color=red>CIF ที่ Filter ต้องเป็นตัวเลข</font>")
-                    Exit Sub
-                End If
-            Else
-                If listFilter.SelectedValue = "FlagHub" Then
+        If listFilter.SelectedValue = "DepTranT" Then
+            filterExpression = listFilter.SelectedValue & "='" & Me.dlControllingUnit.SelectedValue & "'"
+        ElseIf listFilter.SelectedValue = "CUSTSIZE" Then
+            filterExpression = listFilter.SelectedValue & "='" & Me.dlId_CustSize.SelectedValue & "'"
+        ElseIf listFilter.SelectedValue = "Hub_Name_T" Then
+            filterExpression = listFilter.SelectedValue & "='" & Me.dlSBC.SelectedValue & "'"
+        Else
+            If Me.filterTextBox.Text <> "" Then
+                If listFilter.SelectedValue = "CIF" Then
+                    If IsNumeric(Me.filterTextBox.Text) Then
+                        filterExpression = listFilter.SelectedValue & "=" & Me.filterTextBox.Text & ""
+                    Else
+                        Response.Write("<font size=3 color=red>CIF ที่ Filter ต้องเป็นตัวเลข</font>")
+                        Exit Sub
+                    End If
+                ElseIf listFilter.SelectedValue = "FlagHub" Then
                     filterExpression = listFilter.SelectedValue & "='" & Replace(Me.filterTextBox.Text, "'", "''") & "'"
                 Else
                     filterExpression = listFilter.SelectedValue & " like '%" & Replace(Me.filterTextBox.Text, "'", "''") & "%'"
                 End If
-
-                Response.Write("<font size=3 color=red>Filter expression in effect is: " & filterExpression & "</font>")
+            Else 'กรณีไม่คีย์ที่ค้นหา
+                Exit Sub
             End If
-        Else
-            Exit Sub
         End If
+        Response.Write("<font size=3 color=red>Filter expression in effect is: " & filterExpression & "</font>")
         Me.SqlDataByCustomer.FilterExpression = filterExpression
     End Sub
     Protected Sub setFilterButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles setFilterButton.Click
@@ -75,6 +109,7 @@ Partial Class ByCustomer_SM
     Protected Sub clearFilterButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles clearFilterButton.Click
         Me.filterTextBox.Text = ""
         Me.listFilter.SelectedIndex = 0
+        checkHiddenShow()
         'ChkRole()
         Me.SetFilter()
         gvByCustomer.DataBind()
@@ -201,6 +236,7 @@ Partial Class ByCustomer_SM
         If Not Me.IsPostBack Then
             MultiView1.ActiveViewIndex = 1
         End If
+        checkHiddenShow()
     End Sub
     Protected Sub btCancle_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btCancle.Click
         Switchview()
