@@ -49,21 +49,31 @@ Partial Class ByCustomer_SM
             divfiltertextBox.Style("display") = "none"
             divSBC.Style("display") = "none"
             divId_CustSize.Style("display") = "none"
+            divLendingSubT.Style("display") = "none"
         ElseIf listFilter.SelectedValue = "CUSTSIZE" Then
             divdlControllingUnit.Style("display") = "none"
             divfiltertextBox.Style("display") = "none"
             divSBC.Style("display") = "none"
             divId_CustSize.Style("display") = "inline"
+            divLendingSubT.Style("display") = "none"
         ElseIf listFilter.SelectedValue = "Hub_Name_T" Then
             divdlControllingUnit.Style("display") = "none"
             divfiltertextBox.Style("display") = "none"
             divSBC.Style("display") = "inline"
             divId_CustSize.Style("display") = "none"
+            divLendingSubT.Style("display") = "none"
+        ElseIf listFilter.SelectedValue = "LendingSubT" Then
+            divdlControllingUnit.Style("display") = "none"
+            divfiltertextBox.Style("display") = "none"
+            divSBC.Style("display") = "none"
+            divId_CustSize.Style("display") = "none"
+            divLendingSubT.Style("display") = "inline"
         Else
             divdlControllingUnit.Style("display") = "none"
             divfiltertextBox.Style("display") = "inline"
             divSBC.Style("display") = "none"
             divId_CustSize.Style("display") = "none"
+            divLendingSubT.Style("display") = "none"
         End If
         'ตรวจสอบ วันที่สัญญาว่าจะจ่าย
         If dlId_Status.SelectedValue = "31" Or dlId_Status.SelectedValue = "43" Then
@@ -82,6 +92,8 @@ Partial Class ByCustomer_SM
             filterExpression = listFilter.SelectedValue & "='" & Me.dlId_CustSize.SelectedValue & "'"
         ElseIf listFilter.SelectedValue = "Hub_Name_T" Then
             filterExpression = listFilter.SelectedValue & "='" & Me.dlSBC.SelectedValue & "'"
+        ElseIf listFilter.SelectedValue = "LendingSubT" Then
+            filterExpression = listFilter.SelectedValue & "='" & Me.dlLendingSubT.SelectedValue & "'"
         Else
             If Me.filterTextBox.Text <> "" Then
                 If listFilter.SelectedValue = "CIF" Then
