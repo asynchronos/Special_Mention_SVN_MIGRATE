@@ -436,9 +436,13 @@ function chkaccountselect()
                 <ItemStyle Wrap="False" />
             </asp:BoundField>
             <asp:BoundField DataField="Id_Branch" HeaderText="Branch code" 
-                SortExpression="Id_Branch" />
+                SortExpression="Id_Branch">
+                <ItemStyle Wrap="False" />
+            </asp:BoundField>
             <asp:BoundField DataField="Branch_T" HeaderText="Branch" 
-                SortExpression="Branch_T" />
+                SortExpression="Branch_T">
+                <ItemStyle Wrap="False" />
+            </asp:BoundField>
             <asp:BoundField DataField="AgingACC" DataFormatString="{0:n}" 
                 HeaderText="Aging" SortExpression="AgingACC" >
                 <ItemStyle Wrap="False" />
@@ -637,9 +641,13 @@ function chkaccountselect()
                              <asp:BoundField DataField="Status_Eng" HeaderText="Status Acc" 
                                  SortExpression="Id_Status" />
                              <asp:BoundField DataField="Id_Branch" HeaderText="Branch code" 
-                                 SortExpression="Id_Branch" />
+                                 SortExpression="Id_Branch">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
                              <asp:BoundField DataField="Branch_T" HeaderText="Branch" 
-                                 SortExpression="Branch_T" />
+                                 SortExpression="Branch_T">
+                                 <ItemStyle Wrap="False" />
+                             </asp:BoundField>
                              <asp:BoundField DataField="AgingACC" DataFormatString="{0:n}" 
                                  HeaderText="Aging" SortExpression="AgingACC">
                                  <ItemStyle Wrap="False" />
