@@ -220,7 +220,7 @@ function chkaccountselect()
                                     <ItemStyle HorizontalAlign="Right" Wrap="False" />
                                 </asp:BoundField>
                                 <asp:BoundField DataField="PayDCUS" 
-                    HeaderText="Payment(1-Data as of This month)" SortExpression="PayDCUS" 
+                    HeaderText="Payment(This Month)" SortExpression="PayDCUS" 
                     DataFormatString="{0:n}" >
                                     <ItemStyle HorizontalAlign="Right" Wrap="False" />
                                 </asp:BoundField>
@@ -412,7 +412,7 @@ function chkaccountselect()
                 <ItemStyle Wrap="False" />
             </asp:BoundField>
             <asp:BoundField DataField="PayDACC" DataFormatString="{0:n}" 
-                HeaderText="Payment(1-Data as of This month)" SortExpression="PayDACC" >
+                HeaderText="Payment(This Month)" SortExpression="PayDACC" >
                 <ItemStyle Wrap="False" />
             </asp:BoundField>
             <asp:BoundField DataField="ORGDUEPMT" DataFormatString="{0:n}" 
@@ -609,7 +609,7 @@ function chkaccountselect()
                                  <ItemStyle Wrap="False" />
                              </asp:BoundField>
                              <asp:BoundField DataField="PayDACC" DataFormatString="{0:n}" 
-                                 HeaderText="Payment(1-Data as of This month)" SortExpression="PayDACC">
+                                 HeaderText="Payment(This Month)" SortExpression="PayDACC">
                                  <ItemStyle Wrap="False" />
                              </asp:BoundField>
                              <asp:BoundField DataField="ORGDUEPMT" HeaderText="เงื่อนไขที่ต้องชำระ" 
