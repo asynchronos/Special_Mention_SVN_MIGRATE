@@ -52,12 +52,13 @@ function chkaccountselect()
     }
  }
  
- function ShowHidefilterExp(sender,target,target2,target3,target4,e){
+ function ShowHidefilterExp(sender,target,target2,target3,target4,target5,e){
     var listFilter = sender;
     var divfiltertextBox = target;
     var divdlControllingUnit = target2;
     var divId_CustSize = target3;
     var divSBC = target4;
+    var divLendingSubT = target5;
     
     //alert(dlId_Status.options[dlId_Status.selectedIndex].value+":"+dlId_Status.options[dlId_Status.selectedIndex].text);
     
@@ -66,21 +67,31 @@ function chkaccountselect()
         changeDisplay(divfiltertextBox.id,"none");
         changeDisplay(divSBC.id,"none");
         changeDisplay(divId_CustSize.id,"none");
+        changeDisplay(divLendingSubT.id,"none");
     }else if (listFilter.options[listFilter.selectedIndex].value == "CUSTSIZE"){
         changeDisplay(divfiltertextBox.id,"none");
         changeDisplay(divdlControllingUnit.id,"none");
         changeDisplay(divSBC.id,"none");
         changeDisplay(divId_CustSize.id,"inline");
+        changeDisplay(divLendingSubT.id,"none");
     }else if (listFilter.options[listFilter.selectedIndex].value == "Hub_Name_T"){
         changeDisplay(divfiltertextBox.id,"none");
         changeDisplay(divdlControllingUnit.id,"none");
         changeDisplay(divSBC.id,"inline");
         changeDisplay(divId_CustSize.id,"none");
+        changeDisplay(divLendingSubT.id,"none");
+    }else if (listFilter.options[listFilter.selectedIndex].value == "LendingSubT"){
+        changeDisplay(divfiltertextBox.id,"none");
+        changeDisplay(divdlControllingUnit.id,"none");
+        changeDisplay(divSBC.id,"none");
+        changeDisplay(divId_CustSize.id,"none");
+        changeDisplay(divLendingSubT.id,"inline");
     }else{
         changeDisplay(divfiltertextBox.id,"inline");
         changeDisplay(divdlControllingUnit.id,"none");
         changeDisplay(divSBC.id,"none");
         changeDisplay(divId_CustSize.id,"none");
+        changeDisplay(divLendingSubT.id,"none");
     }
  }
 </script>
@@ -117,7 +128,7 @@ function chkaccountselect()
         <table>
         <tr>
                 <td valign="top">
-         Filter :<asp:DropDownList ID="listFilter" runat="server" onchange="ShowHidefilterExp(this,ele('divfiltertextBox'),ele('divdlControllingUnit'),ele('divId_CustSize'),ele('divSBC'),event);">
+         Filter :<asp:DropDownList ID="listFilter" runat="server" onchange="ShowHidefilterExp(this,ele('divfiltertextBox'),ele('divdlControllingUnit'),ele('divId_CustSize'),ele('divSBC'),ele('divLendingSubT'),event);">
                   <asp:ListItem>CIF</asp:ListItem>
                   <asp:ListItem Value="NAME">Name</asp:ListItem>
                   <asp:ListItem Value="LendingSubT">สายงาน</asp:ListItem>
@@ -146,6 +157,12 @@ function chkaccountselect()
        <asp:DropDownList ID="dlId_CustSize" runat="server"
                    DataSourceID="SqlDataId_CustSize" DataTextField="Custsize" 
             DataValueField="id_CustSize">
+            </asp:DropDownList>
+       </div>
+              <div id="divLendingSubT" runat="server" style="display:inline;">
+       <asp:DropDownList ID="dlLendingSubT" runat="server"
+                   DataSourceID="SqlDataByCustomerLendingSubT" DataTextField="LendingSubT" 
+            DataValueField="LendingSubT">
             </asp:DropDownList>
        </div>
        </td><td valign="top">
@@ -333,6 +350,33 @@ function chkaccountselect()
                 <asp:QueryStringParameter Name="TDR" QueryStringField="TDR" Type="String" />
                 <asp:SessionParameter Name="ROLE" SessionField="ROLE" Type="Byte" 
                     DefaultValue="0" />
+                <asp:SessionParameter DefaultValue="0" Name="USER_ID" SessionField="USER_ID" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="REGION" SessionField="REGION" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="BRANCH" SessionField="BRANCH" 
+                    Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="DEPT" SessionField="DEPT" 
+                    Type="String" />
+                <asp:QueryStringParameter DefaultValue="" Name="CUSTSIZE" 
+                    QueryStringField="CUSTSIZE" Type="String" />
+                <asp:QueryStringParameter Name="AgingGroup" QueryStringField="AgingGroup" 
+                    Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+    
+        <asp:SqlDataSource ID="SqlDataByCustomerLendingSubT" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:Special_MentionConnectionString %>" 
+            SelectCommand="SP_ByCustomerLendingSub" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="Week" QueryStringField="Week" Type="String" />
+                <asp:QueryStringParameter Name="Id_StatusG" QueryStringField="Id_StatusG" 
+                    Type="String" />
+                <asp:QueryStringParameter Name="TDR" QueryStringField="TDR" Type="String" />
+                <asp:SessionParameter DefaultValue="0" Name="ROLE" SessionField="ROLE" 
+                    Type="Byte" />
                 <asp:SessionParameter DefaultValue="0" Name="USER_ID" SessionField="USER_ID" 
                     Type="String" />
                 <asp:SessionParameter DefaultValue="0" Name="HUB" SessionField="HUB" 
