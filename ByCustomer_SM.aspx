@@ -244,6 +244,10 @@ function chkaccountselect()
                     SortExpression="CUSTSIZE" >
                                     <ItemStyle Wrap="False" />
                                 </asp:BoundField>
+                                <asp:BoundField DataField="DASOFtxt" HeaderText="DASOF" 
+                                    SortExpression="DASOFtxt">
+                                    <ItemStyle Wrap="False" />
+                                </asp:BoundField>
                             </Columns>
                             <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
                             <EmptyDataTemplate>
