@@ -4,8 +4,8 @@ Option Strict On
 Partial Class Controls_ExportControl_ExportControl
     Inherits System.Web.UI.UserControl
 
-    Private Const excelContentType As String = "application/vnd.xls"
-    Private Const wordContentType As String = "application/vnd.word"
+    Private Const excelContentType As String = "application/vnd.xls; charset=utf-8"
+    Private Const wordContentType As String = "application/vnd.word; charset=utf-8"
 
     Private _filename As String = String.Empty
     Private _controlName As String = String.Empty
@@ -106,6 +106,7 @@ Partial Class Controls_ExportControl_ExportControl
         Response.AddHeader("content-disposition", "attachment;filename=" + filename)
         Response.Cache.SetCacheability(HttpCacheability.NoCache)
         Response.ContentType = _contentType
+        Response.ContentEncoding = System.Text.Encoding.UTF8
 
         Dim sw As New IO.StringWriter()
         Dim htw As New HtmlTextWriter(sw)
