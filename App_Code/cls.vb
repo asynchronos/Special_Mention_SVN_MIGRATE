@@ -1,8 +1,6 @@
 ﻿Option Explicit On
 Option Strict On
-
 Imports Microsoft.VisualBasic
-
 Public Class cls
     ''' <summary>
     ''' Function ใช้สำหรับแสดง Convert Date(String Value) ปี พ.ศ. แปลงเป็น คศ.
@@ -18,11 +16,17 @@ Public Class cls
         End If
         Return xDate
     End Function
-
     Public Function StringUpdate(ByVal xString As String) As String
         If InStr(1, xString, "'") > 0 Then
             xString = Replace(xString, "'", "''")
         End If
         Return xString
     End Function
+    'Public Function StringYM(ByVal xString As String) As String
+    '    Dim ArrayYM As New Array = {"Jan", "Feb"}
+
+    '    Dim m, y As String
+    '    m = Right(StringYM, 2)
+    '    Return xString
+    'End Function
 End Class
