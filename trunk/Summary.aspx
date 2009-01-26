@@ -4,29 +4,38 @@
 
 <%@ Register src="ExportControl/ExportControl.ascx" tagname="ExportControl" tagprefix="uc1" %>
 
+
+
+<%@ Register src="wucMenu.ascx" tagname="wucMenu" tagprefix="uc2" %>
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Customer Special Mention(SM:ชั้นหนี้ ง) สรุปข้อมูลแบ่งตามสถานะ</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
     </head>
-<link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 <body>
     <form id="form1" runat="server">
     <div> 
         <table style="width:100%;">
             <tr>
                 <td>
-    
-        <asp:LinkButton ID="LinkChangePW" runat="server" Font-Bold="True" 
-            Font-Underline="True" ForeColor="Blue" PostBackUrl="~/changePW.aspx" 
-                        style="color: #FF0000">Change 
-        Password</asp:LinkButton>
+                    
+                    <uc2:wucMenu ID="wucMenu1" runat="server" />
+                    
                 </td>
                 <td>
-                    <asp:ImageButton ID="ImbLogout" runat="server" 
-                        ImageUrl="~/Images/btnlogout.gif" style="height: 10px" />
-                </td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td>
@@ -997,7 +1006,7 @@
                                 <asp:Label ID="lblAllCountNoOfCust" runat="server"></asp:Label>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:ImageButton ID="imgLinkWeek05" runat="server" CausesValidation="false" 
+                                <asp:ImageButton ID="imgLinkWeek04" runat="server" CausesValidation="false" 
                                     CommandName="" ImageUrl="~/Images/Preview.gif" Text="Button" />
                             </ItemTemplate>
                         </asp:TemplateField>
