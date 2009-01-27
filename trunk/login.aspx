@@ -43,19 +43,21 @@
                 <td align="right" height="22" style="text-align: left; width: 64px;" >
                     <asp:HyperLink ID="hplforgot" runat="server" Font-Underline="True" NavigateUrl="~/forgot.aspx" Visible="False">ลืมรหัสผ่าน</asp:HyperLink></td>
             </tr>
-            <tr>
-                <td colspan="4" style="height: 14px" >
-                   กรณีมีปัญหาในการใช้งาน สามารถติดต่อเจ้าหน้าที่ได้ที่ หมายเลขโทรศัพท์ 0-2296-2000 ต่อ 1745 (lotusnote: jkanoksa)
-                    <br />
-                    <br />
+        </table>
+        <br /> 
+        <table align="center">
+                    <tr>
+                <td>                
                     <asp:HyperLink ID="hldownloadManual" runat="server" 
                         NavigateUrl="~/Downloads/คู่มือวิธีการกรอกSpecialMention.ppt">Download 
-                    คุ่มือการใช้งานระบบ Customer special mention</asp:HyperLink>
+                    คุ่มือการใช้งานระบบ Customer special mention</asp:HyperLink><br /><br />
+                   -หากต้องการขอ user ใหม่<br /> 
+                     พนักงาน SME และศูนย์ SME ติดต่อ 3198 (คุณสมศักดิ์) (lotusnote:Somsak Wongsupaluck/BAY@BAY)<br />  
+                   -กรณีมีปัญหาในการใช้งาน ติดต่อ 1745 (กนกศักดิ์) (lotusnote: jkanoksa)<br />                    
                     <br />
                     </td>
             </tr>
         </table>
-        <br /> 
         <table style="height: 300px" align="center">
             <tr>
                 <td style="height: 65px; text-align: right;" colspan="3" valign="top">
