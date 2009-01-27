@@ -118,6 +118,19 @@ Partial Class Summary
         gvSumWeekTDR4.DataBind()
         gvSumWeekNonTDR4.DataBind()
     End Sub
+    Sub ChkPermit1linkExportall()
+        If Session("PERMIT") = 1 Then
+            linkall1.Visible = True
+            linkall2.Visible = True
+            linkall3.Visible = True
+            linkall4.Visible = True
+        Else
+            linkall1.Visible = False
+            linkall2.Visible = False
+            linkall3.Visible = False
+            linkall4.Visible = False
+        End If
+    End Sub
 #Region "Week01"
     Protected Sub gvSumWeek01_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvSumWeekTDR1.Init
         CountNoOfCustW01TDR = 0.0
@@ -138,6 +151,9 @@ Partial Class Summary
             Else
                 imb.Attributes.Add("onclick", "javascript:return false;")
             End If
+            '==== add attribute linkall ====
+            linkall1.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=01&Id_StatusG=-&TDR=-&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');return false;")
+            '==== add attribute linkall ====
         End If
     End Sub
     Protected Sub gvSumWeekNonTDR1_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvSumWeekNonTDR1.RowDataBound
@@ -176,6 +192,9 @@ Partial Class Summary
             Else
                 imb.Attributes.Add("onclick", "javascript:return false;")
             End If
+            '==== add attribute linkall ====
+            linkall2.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=02&Id_StatusG=-&TDR=-&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');return false;")
+            '==== add attribute linkall ====
         End If
     End Sub
     Protected Sub gvSumWeekNonTDR2_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvSumWeekNonTDR2.RowDataBound
@@ -214,6 +233,9 @@ Partial Class Summary
             Else
                 imb.Attributes.Add("onclick", "javascript:return false;")
             End If
+            '==== add attribute linkall ====
+            linkall3.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=03&Id_StatusG=-&TDR=-&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');return false;")
+            '==== add attribute linkall ====
         End If
     End Sub
     Protected Sub gvSumWeekNonTDR3_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvSumWeekNonTDR3.RowDataBound
@@ -252,6 +274,9 @@ Partial Class Summary
             Else
                 imb.Attributes.Add("onclick", "javascript:return false;")
             End If
+            '==== add attribute linkall ====
+            linkall4.Attributes.Add("onclick", "javascript:window.open('ByCustomer_SM.aspx?Week=04&Id_StatusG=-&TDR=-&CUSTSIZE=" & dlCustsize.SelectedValue & "&AgingGroup=" & dlAgingGroup.SelectedValue & "','mywindow','location=0,status=1,scrollbars=1,menubar=0,resizable=1,width=790,height=590');return false;")
+            '==== add attribute linkall ====
         End If
     End Sub
     Protected Sub gvSumWeekNonTDR4_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvSumWeekNonTDR4.RowDataBound
@@ -290,13 +315,14 @@ Partial Class Summary
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ChkSession()
-        If Not Me.IsPostBack Then
-            mvWeek.ActiveViewIndex = 0
-            lblDasofW1.Text = Session("DasofW1")
-            lblDasofW2.Text = Session("DasofW2")
-            lblDasofW3.Text = Session("DasofW3")
-            lblDasofW4.Text = Session("DasofW4")
-        End If
+        ChkPermit1linkExportall()
+        ' If Not Me.IsPostBack Then
+        mvWeek.ActiveViewIndex = 0
+        lblDasofW1.Text = Session("DasofW1")
+        lblDasofW2.Text = Session("DasofW2")
+        lblDasofW3.Text = Session("DasofW3")
+        lblDasofW4.Text = Session("DasofW4")
+        ' End If
     End Sub
     Protected Sub dlAgingGroup_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles dlAgingGroup.SelectedIndexChanged
         RefreshData()

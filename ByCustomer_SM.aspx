@@ -241,6 +241,12 @@ function chkaccountselect()
                     DataFormatString="{0:n}" >
                                     <ItemStyle HorizontalAlign="Right" Wrap="False" />
                                 </asp:BoundField>
+                                <asp:BoundField DataField="PAYAMT" DataFormatString="{0:n}" 
+                                    HeaderText="เงื่อนไขที่ต้องชำระ" />
+                                <asp:BoundField DataField="ORGDUEPMT" DataFormatString="{0:n}" 
+                                    HeaderText="ยอดค้างที่ผ่านมา" />
+                                <asp:BoundField DataField="TOTPASTDUE" DataFormatString="{0:n}" 
+                                    HeaderText="ยอดที่ต้องจ่ายในเดือนนี้" />
                                 <asp:BoundField DataField="LendingSubT" HeaderText="สายงาน" 
                     SortExpression="Id_LendingSub" >
                                     <ItemStyle Wrap="False" />

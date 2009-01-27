@@ -71,6 +71,7 @@ Partial Class login
                 Session("USER_ID") = DBDataSet.Tables("EMPDESC").Rows(0).Item("USER_ID").ToString
                 Session("USERNAME") = DBDataSet.Tables("EMPDESC").Rows(0).Item("USERNAME").ToString
                 Session("NAME") = DBDataSet.Tables("EMPDESC").Rows(0).Item("NAME").ToString & " " & DBDataSet.Tables("EMPDESC").Rows(0).Item("SURNAME").ToString
+                Session("PERMIT") = DBDataSet.Tables("EMPDESC").Rows(0).Item("PERMIT").ToString
                 Session("ROLE") = DBDataSet.Tables("EMPDESC").Rows(0).Item("ROLE").ToString
                 Session("REGION") = DBDataSet.Tables("EMPDESC").Rows(0).Item("REGION").ToString
                 Session("BRANCH") = DBDataSet.Tables("EMPDESC").Rows(0).Item("BRANCH").ToString
