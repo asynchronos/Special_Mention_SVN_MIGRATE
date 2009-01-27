@@ -26,7 +26,7 @@ Partial Class SummaryMovement
             lbl1 = e.Row.FindControl("lbl1")
             lbl1.NavigateUrl = "javascript:void(0);"
             lbl1.Attributes.Add("onclick", "javascript:window.open('ByAccMovement.aspx?YearMonthEng=" & e.Row.DataItem("YearMonthEng") & _
-                "&Result=" & gvSummaryMovement.Columns(2).HeaderText() & _
+                "&Result=" & gvSummaryMovement.Columns(1).HeaderText() & _
                 "&BaySize=" & e.Row.DataItem("BaySize") & _
                 "&Exp1=" & e.Row.DataItem("Exp1") & _
                 "&Exp2=" & e.Row.DataItem("Exp2") & _
@@ -38,7 +38,7 @@ Partial Class SummaryMovement
             lbl2 = e.Row.FindControl("lbl2")
             lbl2.NavigateUrl = "javascript:void(0);"
             lbl2.Attributes.Add("onclick", "javascript:window.open('ByAccMovement.aspx?YearMonthEng=" & e.Row.DataItem("YearMonthEng") & _
-            "&Result=" & gvSummaryMovement.Columns(3).HeaderText() & _
+            "&Result=" & gvSummaryMovement.Columns(2).HeaderText() & _
             "&BaySize=" & e.Row.DataItem("BaySize") & _
             "&Exp1=" & e.Row.DataItem("Exp3") & _
             "&Exp2=" & e.Row.DataItem("Exp4") & _
