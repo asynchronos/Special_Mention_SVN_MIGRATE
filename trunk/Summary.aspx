@@ -97,7 +97,9 @@
                     style="font-weight: 700; text-decoration: underline; color: #0000CC" 
                     Text="Week 1"></asp:Label>
                 <asp:Label ID="lblLabelDasofW1" runat="server" Text="Data as of : "></asp:Label>
-                <asp:Label ID="lblDasofW1" runat="server"></asp:Label><br />
+                <asp:Label ID="lblDasofW1" runat="server"></asp:Label>
+                <asp:LinkButton ID="linkall1" runat="server">View all customer</asp:LinkButton>
+                <br />
             <asp:Label ID="lblSumTDRW1" runat="server" Text="TDR" ForeColor="Red"></asp:Label>
                 <uc1:ExportControl ID="expSumWeekTDR1" runat="server" 
                     controlName="gvSumWeekTDR1" filename="TDRWeek1" />
@@ -351,6 +353,7 @@
                     Text="Week 2"></asp:Label>
                 <asp:Label ID="lblLabelDasofW2" runat="server" Text="Data as of : "></asp:Label>
                 <asp:Label ID="lblDasofW2" runat="server"></asp:Label>
+                <asp:LinkButton ID="linkall2" runat="server">View all customer</asp:LinkButton>
                 <br />
                 <asp:Label ID="lblSumTDRW2" runat="server" ForeColor="Red" Text="TDR"></asp:Label>
                 <uc1:ExportControl ID="expSumWeekTDR2" runat="server" 
@@ -608,6 +611,7 @@
                     Text="Week 3"></asp:Label>
                 <asp:Label ID="lblLabelDasofW3" runat="server" Text="Data as of : "></asp:Label>
                 <asp:Label ID="lblDasofW3" runat="server"></asp:Label>
+                <asp:LinkButton ID="linkall3" runat="server">View all customer</asp:LinkButton>
                 <br />
                 <asp:Label ID="lblSumTDRW3" runat="server" ForeColor="Red" Text="TDR"></asp:Label>
                 <uc1:ExportControl ID="expSumWeekTDR3" runat="server" 
@@ -865,6 +869,7 @@
                     Text="Week 4"></asp:Label>
                 <asp:Label ID="lblLabelDasofW4" runat="server" Text="Data as of : "></asp:Label>
                 <asp:Label ID="lblDasofW4" runat="server"></asp:Label>
+                <asp:LinkButton ID="linkall4" runat="server">View all customer</asp:LinkButton>
                 <br />
                 <asp:Label ID="Label18" runat="server" ForeColor="Red" Text="TDR"></asp:Label>
                 <uc1:ExportControl ID="expSumWeekTDR4" runat="server" 
