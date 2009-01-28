@@ -241,11 +241,11 @@ function chkaccountselect()
                     DataFormatString="{0:n}" >
                                     <ItemStyle HorizontalAlign="Right" Wrap="False" />
                                 </asp:BoundField>
-                                <asp:BoundField DataField="PAYAMT" DataFormatString="{0:n}" 
-                                    HeaderText="เงื่อนไขที่ต้องชำระ" />
                                 <asp:BoundField DataField="ORGDUEPMT" DataFormatString="{0:n}" 
-                                    HeaderText="ยอดค้างที่ผ่านมา" />
+                                    HeaderText="เงื่อนไขที่ต้องชำระ" />
                                 <asp:BoundField DataField="TOTPASTDUE" DataFormatString="{0:n}" 
+                                    HeaderText="ยอดค้างชำระที่ผ่านมา" />
+                                <asp:BoundField DataField="PAYAMT" DataFormatString="{0:n}" 
                                     HeaderText="ยอดที่ต้องจ่ายในเดือนนี้" />
                                 <asp:BoundField DataField="LendingSubT" HeaderText="สายงาน" 
                     SortExpression="Id_LendingSub" >
@@ -646,6 +646,8 @@ function chkaccountselect()
                              </asp:BoundField>
                              <asp:BoundField DataField="Status_Eng" HeaderText="Status Acc" 
                                  SortExpression="Id_Status" />
+                             <asp:BoundField DataField="DatePromise" DataFormatString="{0:dd/MM/yyyy}" 
+                                 HeaderText="DatePromise" SortExpression="DatePromise" />
                              <asp:BoundField DataField="Id_Branch" HeaderText="Branch code" 
                                  SortExpression="Id_Branch">
                                  <ItemStyle Wrap="False" />

@@ -7,8 +7,8 @@
         </asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/SummaryMovement.aspx" Text="Movement SM" 
             Value="Movement SM"></asp:MenuItem>
-        <asp:MenuItem NavigateUrl="~/changePW.aspx" Text="Chance password" 
-            Value="Chance password"></asp:MenuItem>
+        <asp:MenuItem NavigateUrl="~/changePW.aspx" Text="Change password" 
+            Value="Change password"></asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/logout.aspx" Text="log out" Value="log out">
         </asp:MenuItem>
     </Items>
