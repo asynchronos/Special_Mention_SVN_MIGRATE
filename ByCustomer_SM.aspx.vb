@@ -154,6 +154,9 @@ Partial Class ByCustomer_SM
         lblCIF.Text = gvByCustomer.Rows(gvByCustomer.SelectedIndex).Cells(xcol.gvByCustomerCIF).Text
         lblName.Text = gvByCustomer.Rows(gvByCustomer.SelectedIndex).Cells(xcol.gvByCustomerName).Text
     End Sub
+    Protected Sub gvByCustomer_Sorted(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.Sorted
+        SetFilter()
+    End Sub
     Protected Sub SqlDataByCustomer_Selected(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.SqlDataSourceStatusEventArgs) Handles SqlDataByCustomer.Selected
         lblCountByCus.Text = "(จำนวนลูกค้าทั้งหมด: " & e.AffectedRows & " ราย)"
     End Sub
@@ -253,7 +256,5 @@ Partial Class ByCustomer_SM
     Protected Sub btCancle_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btCancle.Click
         Switchview()
     End Sub
-    Protected Sub gvByCustomer_Sorted(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvByCustomer.Sorted
-        SetFilter()
-    End Sub
+
 End Class
