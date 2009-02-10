@@ -6,7 +6,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Summary class history by controlling unit</title>
+    <title>Summary class by controlling unit</title>
     <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -36,8 +36,8 @@
                         Text="Select year: "></asp:Label>
     
         <asp:DropDownList ID="dlYear" runat="server" AutoPostBack="True">
-            <asp:ListItem>2550</asp:ListItem>
-            <asp:ListItem Selected="True">2551</asp:ListItem>
+            <asp:ListItem Value="2550">2007</asp:ListItem>
+            <asp:ListItem Selected="True" Value="2551">2008</asp:ListItem>
         </asp:DropDownList>
         <asp:Label ID="lblCustsize" runat="server" Text="Cust.size " 
                         ToolTip="Select Cust.size to view data summary"></asp:Label>
