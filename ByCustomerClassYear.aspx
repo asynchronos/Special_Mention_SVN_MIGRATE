@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ByCustomerClassYear.aspx.vb" Inherits="ByCustomerClassYear" %>
 
+<%@ Register src="ExportControl/ExportControl.ascx" tagname="ExportControl" tagprefix="uc1" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -121,6 +123,12 @@
                 <asp:Button ID="clearFilterButton" runat="server" Text="Clear Filter" />
                         
         </td>
+        </tr>
+        <tr>
+                <td valign="top" colspan="3">
+                    <uc1:ExportControl ID="ExportControl1" runat="server" 
+                        controlName="gvByCustomer" filename="ByCustomerClass" />
+               </td>
         </tr>
         </table>
 
