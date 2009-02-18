@@ -441,6 +441,8 @@ function chkaccountselect()
                 SortExpression="Id_Status" >
                 <ItemStyle Wrap="False" />
             </asp:BoundField>
+            <asp:BoundField DataField="COMMENT" HeaderText="Comment" 
+                SortExpression="COMMENT" />
             <asp:BoundField DataField="Id_Branch" HeaderText="Branch code" 
                 SortExpression="Id_Branch">
                 <ItemStyle Wrap="False" />
@@ -648,6 +650,8 @@ function chkaccountselect()
                                  SortExpression="Id_Status" />
                              <asp:BoundField DataField="DatePromise" DataFormatString="{0:dd/MM/yyyy}" 
                                  HeaderText="DatePromise" SortExpression="DatePromise" />
+                             <asp:BoundField DataField="COMMENT" HeaderText="Comment" 
+                                 SortExpression="COMMENT" />
                              <asp:BoundField DataField="Id_Branch" HeaderText="Branch code" 
                                  SortExpression="Id_Branch">
                                  <ItemStyle Wrap="False" />
